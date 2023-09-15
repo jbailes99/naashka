@@ -14,7 +14,7 @@ const CursorIcon = styled.div`
     cursor: inherit !important;
   }
 `
-const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
+export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
   const size = iconSize || '32x32_4' // Default size
   console.log('test')
   console.log(Cursor)
@@ -59,5 +59,3 @@ const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
     </CursorIcon>
   )
 })
-
-export default Icon
