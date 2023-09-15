@@ -47,24 +47,18 @@ import {
 } from '@react95/icons'
 
 import styled, { x } from '@xstyled/styled-components'
-import Icon from './Icon'
-
 import { candy } from '@react95/core'
-// import AppWindow from './AppWindow'
 
 import '@react95/icons/icons.css'
 
-/**
- * - Desktop Icons
- * - Windows
- * - MAYBE (NOT NOW): Intro like glassanimals
- */
+import { Icon } from '@app/components'
 
 const Desktop = styled.div`
   position: relative;
   flex: 1;
   box-sizing: border-box;
   padding: 32px;
+  grid-template-columns: repeat(1, 1fr);
 
   display: grid;
   flex-wrap: wrap;
@@ -738,7 +732,7 @@ const App = () => {
 
             <Icon
               icon={Wangimg129}
-              title='my_cats.jpg'
+              title='my_cat2342s.jpg'
               onClick={() => openWindow('image3')}
             />
             <Icon
