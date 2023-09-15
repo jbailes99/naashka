@@ -1,11 +1,11 @@
 const express = require('express')
-
+const PORT = process.env.PORT || 5001
 const app = express()
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(80, () => {
-  console.log('Server is up on 3000')
+app.listen(PORT, () => {
+  console.log('Server is up on ' + PORT)
 })
