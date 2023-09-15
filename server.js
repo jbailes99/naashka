@@ -4,7 +4,10 @@ const fs = require('fs')
 const PORT = process.env.PORT || 5001
 const app = express()
 
-app.get('/', (req, res) => {
+// set the public root to the build folder
+app.use(express.static('build'))
+
+app.get('/test', (req, res) => {
   const query = req.query.root || '.'
   console.log('query', query.root)
 
