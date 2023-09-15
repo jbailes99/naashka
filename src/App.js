@@ -763,7 +763,7 @@ const App = () => {
             />
             <Icon
               icon={FileText}
-              title='tomato.txt'
+              title='tomato recipe.txt'
               onClick={() => openWindow('recipes')}
             />
           </Grid>
@@ -820,12 +820,6 @@ const App = () => {
         >
           <Grid>
             <Icon
-              icon={Ole328}
-              title='cupcake recipe'
-              onClick={() => openWindow('recipes')}
-            />
-
-            <Icon
               icon={FileText}
               title='REMAINING BRAIN CELLS'
               onClick={() => openWindow('error')}
@@ -852,7 +846,7 @@ const App = () => {
       {openWindows.recipes && (
         <Modal
           width='300'
-          height='200'
+          height='300'
           icon={<Notepad variant='32x32_4' />}
           title='recipes'
           defaultPosition={windowPosition}
@@ -863,14 +857,40 @@ const App = () => {
               style={{
                 backgroundColor: 'white',
                 padding: '16px',
-                height: '100%',
+                height: '260px',
+                overflowY: 'auto',
               }}
             >
               <ul>
-                <li>eggs</li>
-                <li>butter</li>
-                <li>water</li>
-                <li>cake mix</li>
+                <li>
+                  Heat 2 tablespoons of olive oil in a large pot over medium
+                  heat.
+                </li>
+                <li>
+                  Add 1 chopped onion and sauté until translucent (about 5
+                  minutes).
+                </li>
+                <li>
+                  Sauté 2 cloves of minced garlic for 30 seconds to 1 minute.
+                </li>
+                <li>
+                  Pour in 2 cans (28 ounces each) of diced tomatoes and 1 can
+                  (14 ounces) of tomato sauce.
+                </li>
+                <li>Stir in 2 cups of vegetable or chicken broth.</li>
+                <li>Optional: Add 1 teaspoon of sugar to balance acidity.</li>
+                <li>
+                  Season with 1 teaspoon of dried basil, 1 teaspoon of dried
+                  oregano, salt, and pepper to taste. Mix well.
+                </li>
+                <li>
+                  Bring to a boil, then reduce heat, cover, and simmer for 15-20
+                  minutes.
+                </li>
+                <li>
+                  If desired, add 1/2 cup of heavy cream for a creamy texture.
+                  Heat through, but do not boil.
+                </li>
               </ul>
             </div>
           }
