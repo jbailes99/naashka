@@ -46,13 +46,14 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
   return (
     <CursorIcon>
       <x.div
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
         onClick={onClick}
-        cursor="inherit"
-        style={clickCount === 0 ? {} : highlightStyles}>
+        cursor='inherit'
+        style={clickCount === 0 ? {} : highlightStyles}
+      >
         {React.createElement(icon, {
           title,
           variant: size,

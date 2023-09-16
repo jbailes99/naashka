@@ -1,12 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import VideoPlayerModal from './VideoPlayer'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faTwitter,
-  faFacebook,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons'
-
 import {
   Button,
   TaskBar,
@@ -74,11 +66,6 @@ const Grid = styled.div`
   max-height: 170px;
   overflow-y: auto;
 `
-
-const titleText = styled.div`
-  color: white;
-`
-
 const Background = React.memo(() => (
   <x.div
     position='absolute'
@@ -371,7 +358,7 @@ const App = () => {
       {openWindows.biography && (
         <Modal
           width='500'
-          height='600'
+          height='auto'
           icon={<Explorer100 variant='32x32_4' />}
           title='biography'
           defaultPosition={windowPosition}
@@ -382,7 +369,7 @@ const App = () => {
             style={{
               backgroundColor: 'white',
               padding: '2%',
-              height: '100%', // Set the white background height as a percentage
+              maxHeight: '600px', // Set the white background height as a percentage
               overflowY: 'auto', // Add a vertical scrollbar when needed
             }}
           >
@@ -405,7 +392,43 @@ const App = () => {
               hereYour long text hereYour long text hereYour long text hereYour
               long text hereYour long text hereYour long text hereYour long text
               hereYour long text hereYour long text hereYour long text here ng
+              text hereYour long text hereYour long text hereYour long text our
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text here ng text
+              hereYour long text hereYour long text hereYour long text our long
               text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text here ng text
+              hereYour long text hereYour long text hereYour long text our long
+              text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text hereYour long text
+              hereYour long text hereYour long text hereYour long text hereYour
+              long text hereYour long text hereYour long text here ng text
+              hereYour long text hereYour long text hereYour long text
             </p>
           </div>
         </Modal>
@@ -437,7 +460,7 @@ const App = () => {
           width='auto'
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
-          title='me!'
+          title='me'
           defaultPosition={{ x: 500, y: 500 }}
           closeModal={() => closeWindow('biographyImage')}
         >
@@ -614,7 +637,7 @@ const App = () => {
           closeModal={() => closeWindow('image6')}
         >
           <img
-            src='/images/cat1.jpg'
+            src='/images/killua.gif'
             alt='Image'
             style={{
               maxWidth: '100%',
@@ -824,44 +847,44 @@ const App = () => {
           <Grid>
             <Icon
               icon={FileText}
-              title='lyrics.txt'
+              title='LYRICS.txt'
               onClick={() => openWindow('lyrics1')}
             />
 
             <Icon
               icon={Wangimg129}
-              title='my_cat2342s.jpg'
+              title='My cats getting along.jpg'
               onClick={() => openWindow('image3')}
             />
             <Icon
               icon={FileText}
-              title='lyrics2.txt'
+              title='MORE LYRICS.txt'
               onClick={() => openWindow('lyrics2')}
             />
             <Icon
               icon={FileText}
-              title='taboule.txt'
+              title='Momas Taboule Recipe.txt'
               onClick={() => openWindow('recipesTaboule')}
             />
 
             <Icon
               icon={Wangimg129}
-              title='killua.gif'
+              title='KILLUA.GIF'
               onClick={() => openWindow('image6')}
             />
             <Icon
               icon={Wangimg129}
-              title='click_me.png'
+              title='click me.png'
               onClick={() => openWindow('image5')}
             />
             <Icon
               icon={Wangimg129}
-              title='menace.jpg'
+              title='the menace.jpg'
               onClick={() => openWindow('image4')}
             />
             <Icon
               icon={FileText}
-              title='tomato recipe.txt'
+              title='Tomato Soup Recipe.txt'
               onClick={() => openWindow('recipes')}
             />
           </Grid>
@@ -944,7 +967,7 @@ const App = () => {
       {openWindows.recipes && (
         <Modal
           width='300'
-          height='300'
+          height='auto'
           icon={<Notepad variant='32x32_4' />}
           title='recipes'
           defaultPosition={windowPosition}
@@ -998,7 +1021,7 @@ const App = () => {
       {openWindows.recipesTaboule && (
         <Modal
           width='300'
-          height='300'
+          height='auto'
           icon={<Notepad variant='32x32_4' />}
           title='recipes'
           defaultPosition={windowPosition}
@@ -1098,7 +1121,7 @@ const App = () => {
       {openWindows.lyrics1 && (
         <Modal
           width='300'
-          height='300'
+          height='auto'
           icon={<FileText variant='32x32_4' />}
           title='artwork'
           defaultPosition={windowPosition}
@@ -1122,6 +1145,24 @@ const App = () => {
               </p>
               <p>And there isn't anything they could have said or done?</p>
               <p>And every day I see you on your own</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>
+                Have you ever had the feeling you're drawn to someone?(Yeah)
+              </p>
+              <p>And there isn't anything they could have said or done?</p>
+              <p>And every day I see you on your own</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>
+                Have you ever had the feeling you're drawn to someone?(Yeah)
+              </p>
+              <p>And there isn't anything they could have said or done?</p>
+              <p>And every day I see you on your own</p>
             </p>
           </div>
         </Modal>
@@ -1129,7 +1170,7 @@ const App = () => {
       {openWindows.lyrics2 && (
         <Modal
           width='300'
-          height='300'
+          height='auto'
           icon={<FileText variant='32x32_4' />}
           title='lyrics2.txt'
           defaultPosition={windowPosition}
