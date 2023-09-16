@@ -44,6 +44,8 @@ import {
   Confcp118,
   handData,
   Folder,
+  Phone,
+  Ulclient1235,
 } from '@react95/icons'
 
 import styled, { x } from '@xstyled/styled-components'
@@ -72,6 +74,10 @@ const Grid = styled.div`
   overflow-y: auto;
 `
 
+const titleText = styled.div`
+  color: white;
+`
+
 const Background = React.memo(() => (
   <x.div
     position='absolute'
@@ -79,16 +85,27 @@ const Background = React.memo(() => (
     bottom={0}
     right={0}
     left={0}
+    pointerEvents={'none'}
     // background='#6ba8a9'
   >
     <x.div
+      position='absolute'
+      top={0}
+      bottom={0}
+      right={0}
+      left={0}
+      // background='black'
+      // opacity={0.5}
+    />
+
+    <x.div
       width='100%'
       height='100%'
-      backgroundImage='url(/background.png)'
+      backgroundImage='url(/images/background2.gif)'
       backgroundSize='cover'
       content=' '
       minHeight='100%'
-      // opacity={0.2}
+      opacity={0.9}
     />
   </x.div>
 ))
@@ -120,17 +137,18 @@ const calculateCenterPosition = () => {
 }
 
 const App = () => {
-  const [openWindows, setOpenWindows] = useState({})
+  const [openWindows, setOpenWindows] = useState({ imageDesktop: true })
+
   const [windowPosition, setWindowPosition] = useState(calculateCenterPosition) // Initialize with default values
-  const [isVideoModalOpen, setVideoModalOpen] = useState({})
+  // const [isVideoModalOpen, setVideoModalOpen] = useState({})
 
-  const openVideoModal = () => {
-    setVideoModalOpen(true)
-  }
+  // const openVideoModal = () => {
+  //   setVideoModalOpen(true)
+  // }
 
-  const closeVideoModal = () => {
-    setVideoModalOpen(false)
-  }
+  // const closeVideoModal = () => {
+  //   setVideoModalOpen(false)
+  // }
 
   useEffect(() => {
     // Handle screen resizing to keep the window centered
@@ -160,12 +178,19 @@ const App = () => {
         y: windowPosition.y + windowOffset,
       }
       setWindowPosition(newPosition)
-      setOpenWindows({ ...openWindows, [windowId]: true })
+
+      setOpenWindows((prevOpenWindows) => ({
+        ...prevOpenWindows,
+        [windowId]: true,
+      }))
     }
   }
 
   const closeWindow = (windowId) => {
-    setOpenWindows({ ...openWindows, [windowId]: false })
+    setOpenWindows((prevOpenWindows) => ({
+      ...prevOpenWindows,
+      [windowId]: false,
+    }))
   }
 
   const instagramURL = 'https://www.instagram.com/naashka__/'
@@ -178,7 +203,7 @@ const App = () => {
     window.open(url, '_blank')
   }
   return (
-    <ThemeProvider theme='candy'>
+    <ThemeProvider theme='eggplant'>
       <GlobalStyle />
       <div
         style={{
@@ -193,63 +218,67 @@ const App = () => {
         <Desktop>
           <Icon
             icon={Explorer100}
-            title='Biography'
+            title={<span style={{ color: 'white' }}>Biography</span>}
             // iconSize='48x48_4'
-            onClick={() => openWindow('about')}
+            onClick={() => {
+              openWindow('biography')
+              openWindow('biographyImage')
+            }}
           />
           <Icon
             icon={Progman25}
-            title='Blog'
+            title={<span style={{ color: 'white' }}>Blog</span>}
             onClick={() => openWindow('blog')}
           />
           <Icon
             icon={Shell3221}
-            title='Archives'
+            title={<span style={{ color: 'white' }}>Archives</span>}
             onClick={() => openWindow('archives')}
+            className='tit'
           />
           <Icon
             icon={Awfext326049}
-            title='Fax'
+            title={<span style={{ color: 'white' }}>Fax</span>}
             onClick={() => openWindow('fax')}
           />
           <Icon
             icon={Progman19}
-            title='Videos'
+            title={<span style={{ color: 'white' }}>Videos</span>}
             onClick={() => handleClickLink(youtubeURL)} // Specify the video ID here
           />
           <Icon
             icon={Progman13}
-            title='Photos'
+            title={<span style={{ color: 'white' }}>Photos</span>}
             onClick={() => openWindow('photos')}
           />
           <Icon
             icon={Desk100}
-            title='Artwork'
+            title={<span style={{ color: 'white' }}>Artwork</span>}
             onClick={() => openWindow('artwork')}
           />
           <Icon
             icon={Syncui120}
-            title='Case Studies'
+            title={<span style={{ color: 'white' }}>Case Studies</span>}
             onClick={() => openWindow('caseStudies')}
           />
           <Icon
             icon={RecycleFull}
-            title='Trash'
+            title={<span style={{ color: 'white' }}>Trash</span>}
             onClick={() => openWindow('trash')}
           />
           <Icon
-            icon={Progman26}
-            title='Contact'
+            icon={Phone}
+            title={<span style={{ color: 'white' }}>Contact</span>}
             onClick={() => openWindow('contact')}
           />
           <Icon
             icon={MediaCd}
-            title='Music'
+            title={<span style={{ color: 'white' }}>Music</span>}
             onClick={() => handleClickLink(spotifyURL)}
           />
           <Icon
             icon={Mailnews19}
-            title='Résumé'
+            title={<span style={{ color: 'white' }}>Résumé</span>}
             onClick={() => openWindow('resume')}
           />
         </Desktop>
@@ -277,7 +306,7 @@ const App = () => {
 
                 <List.Item
                   icon={<Mailnews19 variant='32x32_4' />}
-                  onClick={() => {}}
+                  onClick={() => openWindow('resume')}
                 >
                   Résumé
                 </List.Item>
@@ -338,14 +367,14 @@ const App = () => {
           />
         </Modal>
       )} */}
-      {openWindows.about && (
+      {openWindows.biography && (
         <Modal
           width='500'
           height='600'
           icon={<Explorer100 variant='32x32_4' />}
-          title='about'
+          title='biography'
           defaultPosition={windowPosition}
-          closeModal={() => closeWindow('about')}
+          closeModal={() => closeWindow('biography')}
           className='custom-modal'
         >
           <div
@@ -401,6 +430,29 @@ const App = () => {
           />
         </Modal>
       )}
+
+      {openWindows.biographyImage && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='me!'
+          defaultPosition={{ x: 500, y: 500 }}
+          closeModal={() => closeWindow('biographyImage')}
+        >
+          <img
+            src='/images/dogSelfie.jpg'
+            alt='Image'
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+
       {openWindows.image1 && (
         <Modal
           width='auto'
@@ -422,6 +474,51 @@ const App = () => {
           />
         </Modal>
       )}
+
+      {openWindows.imageDesktop && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Ulclient1235 variant='32x32_4' />}
+          title=''
+          defaultPosition={{ x: 1500, y: 1 }}
+          closeModal={() => closeWindow('imageDesktop')}
+        >
+          <img
+            src='/images/cat1.jpg'
+            alt='Image'
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+
+      {openWindows.imageDesktop && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Ulclient1235 variant='32x32_4' />}
+          title=''
+          defaultPosition={{ x: 1600, y: 200 }}
+          closeModal={() => closeWindow('imageDesktop')}
+        >
+          <img
+            src='/images/cute-cat.gif'
+            alt='Image'
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+
       {openWindows.image2 && (
         <Modal
           width='auto'
@@ -936,7 +1033,7 @@ const App = () => {
         <Modal
           width='300'
           height='200'
-          icon={<Progman26 variant='32x32_4' />}
+          icon={<Phone variant='32x32_4' />}
           title='contact'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('contact')}
