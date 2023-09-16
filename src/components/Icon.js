@@ -14,6 +14,12 @@ const CursorIcon = styled.div`
     cursor: inherit !important;
   }
 `
+
+const IconText = styled.div`
+  width: 60px;
+  text-align: center;
+`
+
 export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
   const size = iconSize || '32x32_4' // Default size
   console.log('test')
@@ -39,22 +45,19 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
   return (
     <CursorIcon>
       <x.div
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-        justifyContent='center'
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
         onClick={onClick}
-        cursor='inherit'
-        style={clickCount === 0 ? {} : highlightStyles}
-      >
+        cursor="inherit"
+        style={clickCount === 0 ? {} : highlightStyles}>
         {React.createElement(icon, {
           title,
           variant: size,
           style: { width: 40, height: 40, cursor: 'inherit' },
         })}
-        <x.div textAlign='center' pointerEvents='none'>
-          {title}
-        </x.div>
+        <IconText>{title}</IconText>
       </x.div>
     </CursorIcon>
   )
