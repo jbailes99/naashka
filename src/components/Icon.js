@@ -18,6 +18,7 @@ const CursorIcon = styled.div`
 const IconText = styled.div`
   width: 60px;
   text-align: center;
+  word-break: break-word;
 `
 
 export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
