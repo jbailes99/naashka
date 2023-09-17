@@ -125,7 +125,10 @@ const calculateCenterPosition = () => {
 }
 
 const App = () => {
-  const [openWindows, setOpenWindows] = useState({ imageDesktop: true })
+  const [openWindows, setOpenWindows] = useState({
+    imageDesktop: true,
+    imageDesktop1: true,
+  })
 
   const [windowPosition, setWindowPosition] = useState(calculateCenterPosition) // Initialize with default values
   // const [isVideoModalOpen, setVideoModalOpen] = useState({})
@@ -152,7 +155,7 @@ const App = () => {
   }, [])
 
   const openResume = () => {
-    const resumeURL = '/resume.pdf' // Replace with the actual path to your resume PDF
+    const resumeURL = '/Natasha_Resume.pdf' // Replace with the actual path to your resume PDF
     const resumeWindow = window.open(resumeURL, '_blank')
     if (resumeWindow) {
       resumeWindow.focus()
@@ -213,32 +216,13 @@ const App = () => {
               openWindow('biographyImage')
             }}
           />
+
           <Icon
-            icon={Progman25}
-            title={<span style={{ color: 'white' }}>Blog</span>}
-            onClick={() => openWindow('blog')}
+            icon={Mailnews19}
+            title={<span style={{ color: 'white' }}>Résumé</span>}
+            onClick={() => openWindow('resume')}
           />
-          <Icon
-            icon={Shell3221}
-            title={<span style={{ color: 'white' }}>Archives</span>}
-            onClick={() => openWindow('archives')}
-            className='tit'
-          />
-          <Icon
-            icon={Awfext326049}
-            title={<span style={{ color: 'white' }}>Fax</span>}
-            onClick={() => openWindow('fax')}
-          />
-          <Icon
-            icon={Progman19}
-            title={<span style={{ color: 'white' }}>Videos</span>}
-            onClick={() => handleClickLink(youtubeURL)} // Specify the video ID here
-          />
-          <Icon
-            icon={Progman13}
-            title={<span style={{ color: 'white' }}>Photos</span>}
-            onClick={() => openWindow('photos')}
-          />
+
           <Icon
             icon={Desk100}
             title={<span style={{ color: 'white' }}>Artwork</span>}
@@ -250,24 +234,52 @@ const App = () => {
             onClick={() => openWindow('caseStudies')}
           />
           <Icon
+            icon={Progman25}
+            title={<span style={{ color: 'white' }}>Blog</span>}
+            onClick={() => openWindow('blog')}
+          />
+
+          <Icon
+            icon={Shell3221}
+            title={<span style={{ color: 'white' }}>Archives</span>}
+            onClick={() => openWindow('archives')}
+            className='tit'
+          />
+
+          <Icon
             icon={RecycleFull}
             title={<span style={{ color: 'white' }}>Trash</span>}
             onClick={() => openWindow('trash')}
           />
-          <Icon
-            icon={Phone}
-            title={<span style={{ color: 'white' }}>Contact</span>}
-            onClick={() => openWindow('contact')}
-          />
+
           <Icon
             icon={MediaCd}
             title={<span style={{ color: 'white' }}>Music</span>}
             onClick={() => handleClickLink(spotifyURL)}
           />
+
           <Icon
-            icon={Mailnews19}
-            title={<span style={{ color: 'white' }}>Résumé</span>}
-            onClick={() => openWindow('resume')}
+            icon={Progman13}
+            title={<span style={{ color: 'white' }}>Photos</span>}
+            onClick={() => openWindow('photos')}
+          />
+
+          <Icon
+            icon={Progman19}
+            title={<span style={{ color: 'white' }}>Videos</span>}
+            onClick={() => handleClickLink(youtubeURL)} // Specify the video ID here
+          />
+
+          <Icon
+            icon={Phone}
+            title={<span style={{ color: 'white' }}>Contact</span>}
+            onClick={() => openWindow('contact')}
+          />
+
+          <Icon
+            icon={Awfext326049}
+            title={<span style={{ color: 'white' }}>Fax</span>}
+            onClick={() => openWindow('fax')}
           />
         </Desktop>
         <div style={{ background: '', flexShrink: 0, height: 28 }}>
@@ -328,12 +340,12 @@ const App = () => {
         >
           <div>
             <button onClick={openResume}>Open in New Tab</button>
-            <a href='/resume.pdf' download>
+            <a href='/Natasha_Resume.pdf' download>
               <button>Download</button>
             </a>
           </div>
           <iframe
-            src='resume.pdf' // Replace with the actual path to your resume PDF
+            src='/Natasha_Resume.pdf' // Replace with the actual path to your resume PDF
             width='100%'
             height='100%'
             title='resume'
@@ -399,36 +411,6 @@ const App = () => {
               hereYour long text hereYour long text hereYour long text hereYour
               long text hereYour long text hereYour long text hereYour long text
               hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text here ng text
-              hereYour long text hereYour long text hereYour long text our long
-              text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text here ng text
-              hereYour long text hereYour long text hereYour long text our long
-              text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text here ng text
-              hereYour long text hereYour long text hereYour long text
             </p>
           </div>
         </Modal>
@@ -499,14 +481,14 @@ const App = () => {
         </Modal>
       )}
 
-      {openWindows.imageDesktop && (
+      {openWindows.imageDesktop1 && (
         <Modal
           width='auto'
           height='auto'
           icon={<Ulclient1235 variant='32x32_4' />}
           title=''
           defaultPosition={{ x: 1500, y: 1 }}
-          closeModal={() => closeWindow('imageDesktop')}
+          closeModal={() => closeWindow('imageDesktop1')}
         >
           <img
             src='/images/cat1.jpg'
