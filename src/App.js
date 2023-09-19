@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Button,
-  TaskBar,
-  List,
-  ThemeProvider,
-  GlobalStyle,
-  Modal,
-} from '@react95/core'
+import { TaskBar, List, ThemeProvider, GlobalStyle, Modal } from '@react95/core'
 import {
   Wangimg129,
   WindowsExplorer,
-  ReaderClosed,
-  BillAdd,
   Notepad,
   Desk100,
   RecycleFull,
   Gcdef100,
-  Shell324,
   Earth,
-  Progman26,
-  FilePick,
   Progman19,
   Progman13,
   Mailnews19,
-  Syncui121,
   Progman25,
   Shell3221,
   MediaCd,
@@ -31,17 +18,13 @@ import {
   Explorer100,
   Syncui120,
   FileText,
-  Sysedit2,
-  Ole328,
   Confcp118,
-  handData,
   Folder,
   Phone,
   Ulclient1235,
 } from '@react95/icons'
 
 import styled, { x } from '@xstyled/styled-components'
-import { candy } from '@react95/core'
 
 import '@react95/icons/icons.css'
 
@@ -126,8 +109,9 @@ const calculateCenterPosition = () => {
 
 const App = () => {
   const [openWindows, setOpenWindows] = useState({
-    imageDesktop: true,
+    imageDesktop2: true,
     imageDesktop1: true,
+    imageDesktop: true,
   })
 
   const [windowPosition, setWindowPosition] = useState(calculateCenterPosition) // Initialize with default values
@@ -267,7 +251,7 @@ const App = () => {
           <Icon
             icon={Progman19}
             title={<span style={{ color: 'white' }}>Videos</span>}
-            onClick={() => handleClickLink(youtubeURL)} // Specify the video ID here
+            onClick={() => openWindow('videoFolder')} // Specify the video ID here
           />
 
           <Icon
@@ -352,28 +336,14 @@ const App = () => {
           ></iframe>
         </Modal>
       )}
-      {/* {openWindows.videoplayer && (
-        <Modal
-          title='Video Player'
-          closeModal={closeVideoModal}
-          width={400}
-          height={320}
-          visible={isVideoModalOpen}
-        >
-          <VideoPlayerModal
-            videoSrc='https://media.w3.org/2010/05/sintel/trailer_hd.mp4'
-            isOpen={isVideoModalOpen}
-            onClose={closeVideoModal}
-          />
-        </Modal>
-      )} */}
+
       {openWindows.biography && (
         <Modal
           width='500'
           height='auto'
           icon={<Explorer100 variant='32x32_4' />}
           title='biography'
-          defaultPosition={windowPosition}
+          defaultPosition={{ x: 150, y: 200 }}
           closeModal={() => closeWindow('biography')}
           className='custom-modal'
         >
@@ -385,33 +355,75 @@ const App = () => {
               overflowY: 'auto', // Add a vertical scrollbar when needed
             }}
           >
-            <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+            <div style={{ textAlign: 'center' }}>
               <p
                 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '0' }}
               >
-                ~About Me~
+                Natasha Iskayne [ tash ]
               </p>
             </div>
-            <p style={{ fontSize: '20px' }}>
-              Your long text hereYour long text hereYour long text hereYour long
-              text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text here ng
-              text hereYour long text hereYour long text hereYour long text our
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-              long text hereYour long text hereYour long text hereYour long text
-              hereYour long text hereYour long text hereYour long text hereYour
-            </p>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Branding & User Experience designer for ESDC, Government of
+                Canada.
+              </p>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                📍 Ottawa, Canada
+              </p>
+            </div>
+            <ul style={{ fontWeight: 'bold', fontSize: '18px' }}>
+              <li>Figma</li>
+              <li>UX Design</li>
+              <li>Brand Design</li>
+              <li>Graphic Design</li>
+              <li>HTML/CSS</li>
+              <li>Animation</li>
+              <li>Video Editing</li>
+              <li>Marketing</li>
+              <li>Adobe Creative Suite</li>
+              <li>Illustration</li>
+              <li>Web Design</li>
+              <li>Aseprite</li>
+              <li>Product Design</li>
+              <li>Project Managing</li>
+              <li>Wireframing</li>
+            </ul>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>About me</p>
+            </div>
+            <div style={{ fontSize: '20px' }}>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
+                Hey there 👋🏼 I’m Natasha. I’m an Ottawa based designer
+                specializing in brand design, user experience design, and
+                illustrations that emphasize functionality, creativity, and
+                jubilation.
+              </p>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
+                My professional focus centers around collaborative artistry and
+                the joy of exploring various creative avenues. My fascination
+                with technology stems from its ability to foster connections,
+                empower individuals, and broaden our creative playground. My
+                philosophy centers around crafting design products and solutions
+                that prioritize the human experience. What drives me is the
+                vision of creating meaningful and intuitive experiences that
+                cater to the needs and preferences of users.
+              </p>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
+                With a solid background of 5+ years designing and illustrating
+                for both the public and private sectors, I hope to co-create
+                with curious people who share my passion for creativity,
+                community, and culture, and to have fun, of course.
+              </p>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
+                If I'm not practicing my craft, you'll find me catching up on my
+                favorite anime, learning some code, running some League of
+                Legends, mastering a new language, clumsily practicing some
+                latte art, or managing my sticker shop.
+              </p>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
+                Pleased to e-meet you! 😊
+              </p>
+            </div>
           </div>
         </Modal>
       )}
@@ -481,7 +493,7 @@ const App = () => {
         </Modal>
       )}
 
-      {openWindows.imageDesktop1 && (
+      {/* {openWindows.imageDesktop1 && (
         <Modal
           width='auto'
           height='auto'
@@ -501,20 +513,42 @@ const App = () => {
             }}
           />
         </Modal>
-      )}
+      )} */}
 
       {openWindows.imageDesktop && (
         <Modal
           width='auto'
           height='auto'
           icon={<Ulclient1235 variant='32x32_4' />}
-          title=''
-          defaultPosition={{ x: 1600, y: 200 }}
+          title='cute-cat.gif'
+          defaultPosition={{ x: 1600, y: 20 }}
           closeModal={() => closeWindow('imageDesktop')}
         >
           <img
             src='/images/cute-cat.gif'
             alt='Image'
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+
+      {openWindows.imageDesktop2 && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Ulclient1235 variant='32x32_4' />}
+          title='me!'
+          defaultPosition={{ x: 1300, y: 250 }}
+          closeModal={() => closeWindow('imageDesktop2')}
+        >
+          <img
+            src='/images/Me_Tash.png'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -536,7 +570,7 @@ const App = () => {
         >
           <img
             src='/images/cat1.jpg'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -655,16 +689,16 @@ const App = () => {
           <Grid>
             <Icon
               icon={Wangimg129}
-              title='photo1'
-              onClick={() => openWindow('image')}
+              title='my image.png'
+              onClick={() => openWindow('error')}
             />
 
             <Icon
               icon={Wangimg129}
-              title='photo2'
-              onClick={() => openWindow('image1')}
+              title='my image.jpg'
+              onClick={() => openWindow('error')}
             />
-            <Icon
+            {/* <Icon
               icon={Wangimg129}
               title='photo3'
               onClick={() => openWindow('')}
@@ -715,7 +749,7 @@ const App = () => {
               icon={Wangimg129}
               title='photo12'
               onClick={() => openWindow('')}
-            />
+            /> */}
           </Grid>
           {/* Include your image gallery here */}
           {/* <ul class='image-gallery'>
@@ -872,6 +906,28 @@ const App = () => {
           </Grid>
         </Modal>
       )}
+
+      {openWindows.videoFolder && (
+        <Modal
+          width='300'
+          height='200'
+          icon={<Progman19 variant='32x32_4' />}
+          title='videos'
+          defaultPosition={windowPosition}
+          closeModal={() => closeWindow('videoFolder')}
+        >
+          <Grid>
+            <Icon
+              icon={Progman19}
+              title='watch_me.mov'
+              onClick={() =>
+                handleClickLink('https://www.youtube.com/shorts/F2Ostp99Jj4')
+              }
+            />
+          </Grid>
+        </Modal>
+      )}
+
       {openWindows.artwork && (
         <Modal
           width='300'
@@ -1037,14 +1093,39 @@ const App = () => {
       )}
       {openWindows.contact && (
         <Modal
-          width='300'
-          height='200'
+          width='400'
+          height='auto'
           icon={<Phone variant='32x32_4' />}
           title='contact'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('contact')}
         >
-          {<p></p>}
+          <div
+            style={{
+              backgroundColor: 'white',
+              padding: '2%',
+              maxHeight: '600px', // Set the white background height as a percentage
+              overflowY: 'auto', // Add a vertical scrollbar when needed
+              textAlign: 'center',
+            }}
+          >
+            <p style={{ fontSize: '20px' }}>
+              <p style={{ fontSize: '18px' }}>
+                Have any questions, or simply share the vibe?
+                <br />
+                I'm always down to chat!
+                <br />
+                Reach me at <br />
+                <br />
+                <span style={{ fontWeight: 'bold' }}>
+                  naashka.isk@gmail.com
+                </span>
+                <br />
+                <br />
+                Bonus karma if you include pictures of your pets~
+              </p>
+            </p>
+          </div>
         </Modal>
       )}
       {openWindows.music && (
@@ -1068,7 +1149,26 @@ const App = () => {
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('fax')}
         >
-          {<p></p>}
+          <div
+            style={{
+              padding: '2%',
+              maxHeight: '600px', // Set the white background height as a percentage
+              overflowY: 'auto', // Add a vertical scrollbar when needed
+            }}
+          >
+            {
+              <p
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '10px',
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                }}
+              >
+                👷 Under Construction 👷
+              </p>
+            }
+          </div>
         </Modal>
       )}
       {openWindows.blog && (
