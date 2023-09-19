@@ -29,72 +29,25 @@ import styled, { x } from '@xstyled/styled-components'
 import '@react95/icons/icons.css'
 
 import { Icon } from '@app/components'
-
-const Desktop = styled.div`
-  position: relative;
-  flex: 1;
-  box-sizing: border-box;
-  padding: 32px;
-  grid-template-columns: repeat(1, 1fr);
-
-  display: grid;
-  flex-wrap: wrap;
-  justify-items: start;
-  overflow: visible;
-`
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  max-height: 170px;
-  overflow-y: auto;
-`
-const Background = React.memo(() => (
-  <x.div
-    position='absolute'
-    top={0}
-    bottom={0}
-    right={0}
-    left={0}
-    pointerEvents={'none'}
-    // background='#6ba8a9'
-  >
-    <x.div
-      position='absolute'
-      top={0}
-      bottom={0}
-      right={0}
-      left={0}
-      // background='black'
-      // opacity={0.5}
-    />
-
-    <x.div
-      width='100%'
-      height='100%'
-      backgroundImage='url(/images/background2.gif)'
-      backgroundSize='cover'
-      content=' '
-      minHeight='100%'
-      opacity={0.9}
-    />
-  </x.div>
-))
-
-// const Test = React.memo(() => (
-//   <Modal
-//     width='300'
-//     height='200'
-//     icon={<WindowsExplorer variant='32x32_4' />}
-//     title='Browse test'
-//     defaultPosition={{
-//       x: 0,
-//       y: 20,
-//     }}
-//   >
-//     test
-//   </Modal>
-// ))
+import {
+  BiographyIcon,
+  ResumeIcon,
+  ArtworkIcon,
+  CaseStudiesIcon,
+  BlogIcon,
+  ArchivesIcon,
+  TrashIcon,
+  MusicIcon,
+  PhotosIcon,
+  VideosIcon,
+  ContactIcon,
+  FaxIcon,
+  Desktop,
+  Grid,
+} from './Desktop/DesktopContent'
+import {
+  Background, // Background image
+} from './Desktop/Background'
 
 const windowOffset = 20
 
@@ -115,15 +68,6 @@ const App = () => {
   })
 
   const [windowPosition, setWindowPosition] = useState(calculateCenterPosition) // Initialize with default values
-  // const [isVideoModalOpen, setVideoModalOpen] = useState({})
-
-  // const openVideoModal = () => {
-  //   setVideoModalOpen(true)
-  // }
-
-  // const closeVideoModal = () => {
-  //   setVideoModalOpen(false)
-  // }
 
   useEffect(() => {
     // Handle screen resizing to keep the window centered
@@ -169,11 +113,8 @@ const App = () => {
   }
 
   const instagramURL = 'https://www.instagram.com/naashka__/'
-  const youtubeURL = 'https://www.youtube.com/c/naashie'
   const linkedInURL = 'https://www.linkedin.com/in/naashka/'
-  const spotifyURL =
-    'https://open.spotify.com/playlist/77JUipFLchNc0lLDR5toAW?si=31db6ab477ea4b7c'
-  // const youtubeVideoURL = ''
+
   const handleClickLink = (url) => {
     window.open(url, '_blank')
   }
@@ -191,81 +132,20 @@ const App = () => {
         <Background />
 
         <Desktop>
-          <Icon
-            icon={Explorer100}
-            title={<span style={{ color: 'white' }}>Biography</span>}
-            // iconSize='48x48_4'
-            onClick={() => {
-              openWindow('biography')
-              openWindow('biographyImage')
-            }}
-          />
-
-          <Icon
-            icon={Mailnews19}
-            title={<span style={{ color: 'white' }}>Résumé</span>}
-            onClick={() => openWindow('resume')}
-          />
-
-          <Icon
-            icon={Desk100}
-            title={<span style={{ color: 'white' }}>Artwork</span>}
-            onClick={() => openWindow('artwork')}
-          />
-          <Icon
-            icon={Syncui120}
-            title={<span style={{ color: 'white' }}>Case Studies</span>}
-            onClick={() => openWindow('caseStudies')}
-          />
-          <Icon
-            icon={Progman25}
-            title={<span style={{ color: 'white' }}>Blog</span>}
-            onClick={() => openWindow('blog')}
-          />
-
-          <Icon
-            icon={Shell3221}
-            title={<span style={{ color: 'white' }}>Archives</span>}
-            onClick={() => openWindow('archives')}
-            className='tit'
-          />
-
-          <Icon
-            icon={RecycleFull}
-            title={<span style={{ color: 'white' }}>Trash</span>}
-            onClick={() => openWindow('trash')}
-          />
-
-          <Icon
-            icon={MediaCd}
-            title={<span style={{ color: 'white' }}>Music</span>}
-            onClick={() => handleClickLink(spotifyURL)}
-          />
-
-          <Icon
-            icon={Progman13}
-            title={<span style={{ color: 'white' }}>Photos</span>}
-            onClick={() => openWindow('photos')}
-          />
-
-          <Icon
-            icon={Progman19}
-            title={<span style={{ color: 'white' }}>Videos</span>}
-            onClick={() => openWindow('videoFolder')} // Specify the video ID here
-          />
-
-          <Icon
-            icon={Phone}
-            title={<span style={{ color: 'white' }}>Contact</span>}
-            onClick={() => openWindow('contact')}
-          />
-
-          <Icon
-            icon={Awfext326049}
-            title={<span style={{ color: 'white' }}>Fax</span>}
-            onClick={() => openWindow('fax')}
-          />
+          <BiographyIcon openWindow={openWindow} />
+          <ResumeIcon openWindow={openWindow} />
+          <ArtworkIcon openWindow={openWindow} />
+          <CaseStudiesIcon openWindow={openWindow} />
+          <BlogIcon openWindow={openWindow} />
+          <ArchivesIcon openWindow={openWindow} />
+          <TrashIcon openWindow={openWindow} />
+          <MusicIcon handleClickLink={handleClickLink} />
+          <PhotosIcon openWindow={openWindow} />
+          <VideosIcon openWindow={openWindow} />
+          <ContactIcon openWindow={openWindow} />
+          <FaxIcon openWindow={openWindow} />
         </Desktop>
+
         <div style={{ background: '', flexShrink: 0, height: 28 }}>
           <TaskBar
             list={
