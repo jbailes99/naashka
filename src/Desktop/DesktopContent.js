@@ -28,7 +28,7 @@ const Desktop = styled.div`
   position: relative;
   // flex: 1;
   box-sizing: border-box;
-  padding: 32px;
+  padding: 26px;
   // grid-template-columns: repeat(1, 1fr);
 
   // display: grid;

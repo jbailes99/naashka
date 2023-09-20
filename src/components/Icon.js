@@ -53,6 +53,8 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
         justifyContent='center'
         onClick={onClick}
         cursor='inherit'
+        marginLeft='5'
+        marginBottom='5'
         style={clickCount === 0 ? {} : highlightStyles}
       >
         {React.createElement(icon, {
