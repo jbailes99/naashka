@@ -61,21 +61,21 @@ const calculateCenterPosition = () => {
 }
 
 const colors = [
-  '#FF5733',
-  '#33FF57',
-  '#5733FF',
-  '#FF336E',
-  '#6EFF33',
-  '#336EFF',
-  '#FFB533',
-  '#33FFB5',
-  '#B533FF',
-  '#FF3357',
-  '#57FF33',
-  '#3357FF',
-  '#FF33B5',
-  '#B5FF33',
-  '#33B5FF',
+  '#FF6347', // Tomato
+  '#C93212', // Chartreuse
+  '#8A2BE2', // Blue Violet
+  '#FF4500', // Orange Red
+  '#32CD32', // Lime Green
+  '#4169E1', // Royal Blue
+  '#FFA500', // Orange
+  '#40E0D0', // Turquoise
+  '#9932CC', // Dark Orchid
+  '#FF1493', // Deep Pink
+  '#228B22', // Forest Green
+  '#800080', // Purple
+  '#FF69B4', // Hot Pink
+  '#00CED1', // Dark Turquoise
+  '#8B4513', // Saddle Brown
 ]
 
 const DesktopContainer = styled.div`
