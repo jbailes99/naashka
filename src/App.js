@@ -108,6 +108,8 @@ const App = () => {
     'Wireframing',
     // Add more tags here
   ]
+
+  const emailAddress = 'naashka.isk@gmail.com'
   const [openWindows, setOpenWindows] = useState({
     imageDesktop2: true,
     imageDesktop1: true,
@@ -212,7 +214,7 @@ const App = () => {
                     handleClickLink(linkedInURL)
                   }}
                 >
-                  LinkedIn
+                  Linkedin
                 </List.Item>
 
                 <List.Item
@@ -435,8 +437,8 @@ const App = () => {
         <Modal
           width='auto'
           height='auto'
-          icon={<Ulclient1235 variant='32x32_4' />}
-          title='me!'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='naashka.png'
           defaultPosition={{
             x: 1250,
             y: 200,
@@ -460,14 +462,14 @@ const App = () => {
         <Modal
           width='auto'
           height='auto'
-          icon={<Ulclient1235 variant='32x32_4' />}
+          icon={<Wangimg129 variant='32x32_4' />}
           title='duo-coffee-made-by-naashka.gif'
           defaultPosition={{ x: 1500, y: 500 }}
           closeModal={() => closeWindow('imageDesktop1')}
         >
           <img
             src='/images/duo-coffee-made-by-naashka.gif'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -482,14 +484,14 @@ const App = () => {
         <Modal
           width='auto'
           height='auto'
-          icon={<Ulclient1235 variant='32x32_4' />}
-          title='cute-cat.gif'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='cute_meow_meow.gif'
           defaultPosition={{ x: 1600, y: 20 }}
           closeModal={() => closeWindow('imageDesktop')}
         >
           <img
             src='/images/cute-cat.gif'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -532,7 +534,7 @@ const App = () => {
         >
           <img
             src='/images/cat1.jpg'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -553,7 +555,7 @@ const App = () => {
         >
           <img
             src='/images/cat1.jpg'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -574,7 +576,7 @@ const App = () => {
         >
           <img
             src='/images/cat1.jpg'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -595,7 +597,7 @@ const App = () => {
         >
           <img
             src='/images/killua.gif'
-            alt='Image'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -1048,23 +1050,27 @@ const App = () => {
               maxHeight: '600px', // Set the white background height as a percentage
               overflowY: 'auto', // Add a vertical scrollbar when needed
               textAlign: 'center',
+              fontWeight: 'bold',
             }}
           >
             <p style={{ fontSize: '20px' }}>
-              <p style={{ fontSize: '18px' }}>
-                Have any questions, or simply share the vibe?
-                <br />
-                I'm always down to chat!
-                <br />
-                Reach me at <br />
-                <br />
-                <span style={{ fontWeight: 'bold' }}>
-                  naashka.isk@gmail.com
-                </span>
-                <br />
-                <br />
-                Bonus karma if you include pictures of your pets~
-              </p>
+              Have any questions, or simply want to share the vibe?
+              <br />
+              I'm always down to chat!
+              <br />
+              Reach me at <br />
+              <br />
+              <span style={{ fontWeight: 'bold' }}>
+                <a
+                  href={`mailto:${emailAddress}`}
+                  style={{ color: 'blue', textDecoration: 'underline' }}
+                >
+                  {emailAddress}
+                </a>
+              </span>
+              <br />
+              <br />
+              Bonus karma if you include pictures of your pets~
             </p>
           </div>
         </Modal>
