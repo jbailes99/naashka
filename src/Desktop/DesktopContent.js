@@ -17,16 +17,24 @@ import {
 import styled from '@xstyled/styled-components'
 
 const Desktop = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-height: 100%;
+  grid-gap: 10px;
+
   position: relative;
-  flex: 1;
+  // flex: 1;
   box-sizing: border-box;
   padding: 32px;
-  grid-template-columns: repeat(1, 1fr);
+  // grid-template-columns: repeat(1, 1fr);
 
-  display: grid;
-  flex-wrap: wrap;
-  justify-items: start;
-  overflow: visible;
+  // display: grid;
+  // flex-wrap: wrap;
+  // justify-items: start;
+  // overflow: visible;
 `
 
 const Grid = styled.div`
