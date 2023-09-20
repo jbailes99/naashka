@@ -419,18 +419,21 @@ const App = () => {
           />
         </Modal>
       )}
-      {openWindows.image1 && (
+      {openWindows.MeTash && (
         <Modal
           width='auto'
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
-          title='image'
-          defaultPosition={windowPosition}
-          closeModal={() => closeWindow('image1')}
+          title='naashka.png'
+          defaultPosition={{
+            x: window.innerWidth * 0.56,
+            y: window.innerHeight * 0.17,
+          }}
+          closeModal={() => closeWindow('imageDesktop2')}
         >
           <img
-            src='/images/cat1.jpg'
-            alt='Image'
+            src='/images/DesktopMedia/Me_Tash.png'
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -440,20 +443,20 @@ const App = () => {
           />
         </Modal>
       )}
-      {openWindows.MeTash && (
+      {openWindows.Tired && (
         <Modal
           width='auto'
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
-          title='naashka.png'
+          title='zzzz.jpg'
           defaultPosition={{
-            x: 1250,
-            y: 200,
+            x: window.innerWidth * 0.82,
+            y: window.innerHeight * 0.36,
           }}
-          closeModal={() => closeWindow('imageDesktop2')}
+          closeModal={() => closeWindow('Tired')}
         >
           <img
-            src='/images/DesktopMedia/Me_Tash.png'
+            src='/images/DesktopMedia/tired.jpg'
             alt=''
             style={{
               maxWidth: '100%',
@@ -470,7 +473,10 @@ const App = () => {
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
           title='duo-coffee-made-by-naashka.gif'
-          defaultPosition={{ x: 1500, y: 500 }}
+          defaultPosition={{
+            x: window.innerWidth * 0.7,
+            y: window.innerHeight * 0.5,
+          }}
           closeModal={() => closeWindow('imageDesktop1')}
         >
           <img
@@ -492,34 +498,13 @@ const App = () => {
           icon={<Wangimg129 variant='32x32_4' />}
           title='cute_meow_meow.gif'
           defaultPosition={{
-            x: window.innerWidth * 0.9,
-            y: window.innerHeight * 0.5,
+            x: window.innerWidth * 0.8,
+            y: window.innerHeight * 0.01,
           }}
           closeModal={() => closeWindow('imageDesktop')}
         >
           <img
             src='/images/DesktopMedia/cute-cat.gif'
-            alt=''
-            style={{
-              maxWidth: '100%',
-              maxHeight: '80%',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
-        </Modal>
-      )}
-      {openWindows.Tired && (
-        <Modal
-          width='auto'
-          height='auto'
-          icon={<Wangimg129 variant='32x32_4' />}
-          title='zzzz.jpg'
-          defaultPosition={{ x: 1600, y: 20 }}
-          closeModal={() => closeWindow('Tired')}
-        >
-          <img
-            src='/images/DesktopMedia/tired.jpg'
             alt=''
             style={{
               maxWidth: '100%',
