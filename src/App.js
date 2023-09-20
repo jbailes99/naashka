@@ -60,7 +60,54 @@ const calculateCenterPosition = () => {
   return { x: centerX, y: centerY }
 }
 
+const colors = [
+  '#FF5733',
+  '#33FF57',
+  '#5733FF',
+  '#FF336E',
+  '#6EFF33',
+  '#336EFF',
+  '#FFB533',
+  '#33FFB5',
+  '#B533FF',
+  '#FF3357',
+  '#57FF33',
+  '#3357FF',
+  '#FF33B5',
+  '#B5FF33',
+  '#33B5FF',
+]
+
+const Tag = styled.div`
+  display: inline-block;
+  margin: 4px;
+  padding: 4px 8px;
+  background: ${(props) => colors[props.index % colors.length]};
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 18px;
+`
+
 const App = () => {
+  const tags = [
+    'Figma',
+    'UX Design',
+    'Brand Design',
+    'Graphic Design',
+    'HTML/CSS',
+    'Animation',
+    'Video Editing',
+    'Marketing',
+    'Adobe Creative Suite',
+    'Illustration',
+    'Web Design',
+    'Aseprite',
+    'Product Design',
+    'Project Managing',
+    'Wireframing',
+    // Add more tags here
+  ]
   const [openWindows, setOpenWindows] = useState({
     imageDesktop2: true,
     imageDesktop1: true,
@@ -219,7 +266,7 @@ const App = () => {
 
       {openWindows.biography && (
         <Modal
-          width='500'
+          width='650'
           height='auto'
           icon={<Explorer100 variant='32x32_4' />}
           title='biography'
@@ -237,7 +284,11 @@ const App = () => {
           >
             <div style={{ textAlign: 'center' }}>
               <p
-                style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '0' }}
+                style={{
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  marginTop: '20px',
+                }}
               >
                 Natasha Iskayne [ tash ]
               </p>
@@ -251,23 +302,30 @@ const App = () => {
                 📍 Ottawa, Canada
               </p>
             </div>
-            <ul style={{ fontWeight: 'bold', fontSize: '18px' }}>
-              <li>Figma</li>
-              <li>UX Design</li>
-              <li>Brand Design</li>
-              <li>Graphic Design</li>
-              <li>HTML/CSS</li>
-              <li>Animation</li>
-              <li>Video Editing</li>
-              <li>Marketing</li>
-              <li>Adobe Creative Suite</li>
-              <li>Illustration</li>
-              <li>Web Design</li>
-              <li>Aseprite</li>
-              <li>Product Design</li>
-              <li>Project Managing</li>
-              <li>Wireframing</li>
-            </ul>
+            <div
+              style={{
+                listStyleType: 'none',
+                padding: '5px',
+                fontWeight: 'bold',
+                fontSize: '18px',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                {tags.map((tag, index) => (
+                  <Tag key={tag} index={index}>
+                    {tag}
+                  </Tag>
+                ))}
+              </div>
+            </div>
+
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '20px', fontWeight: 'bold' }}>About me</p>
             </div>
@@ -373,17 +431,42 @@ const App = () => {
         </Modal>
       )}
 
-      {/* {openWindows.imageDesktop1 && (
+      {openWindows.imageDesktop2 && (
         <Modal
           width='auto'
           height='auto'
           icon={<Ulclient1235 variant='32x32_4' />}
-          title=''
-          defaultPosition={{ x: 1500, y: 1 }}
+          title='me!'
+          defaultPosition={{
+            x: 1250,
+            y: 200,
+          }}
+          closeModal={() => closeWindow('imageDesktop2')}
+        >
+          <img
+            src='/images/Me_Tash.png'
+            alt=''
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+
+      {openWindows.imageDesktop1 && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Ulclient1235 variant='32x32_4' />}
+          title='duo-coffee-made-by-naashka.gif'
+          defaultPosition={{ x: 1500, y: 500 }}
           closeModal={() => closeWindow('imageDesktop1')}
         >
           <img
-            src='/images/cat1.jpg'
+            src='/images/duo-coffee-made-by-naashka.gif'
             alt='Image'
             style={{
               maxWidth: '100%',
@@ -393,7 +476,7 @@ const App = () => {
             }}
           />
         </Modal>
-      )} */}
+      )}
 
       {openWindows.imageDesktop && (
         <Modal
@@ -407,28 +490,6 @@ const App = () => {
           <img
             src='/images/cute-cat.gif'
             alt='Image'
-            style={{
-              maxWidth: '100%',
-              maxHeight: '80%',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
-        </Modal>
-      )}
-
-      {openWindows.imageDesktop2 && (
-        <Modal
-          width='auto'
-          height='auto'
-          icon={<Ulclient1235 variant='32x32_4' />}
-          title='me!'
-          defaultPosition={{ x: 1300, y: 250 }}
-          closeModal={() => closeWindow('imageDesktop2')}
-        >
-          <img
-            src='/images/Me_Tash.png'
-            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80%',
@@ -570,7 +631,7 @@ const App = () => {
             <Icon
               icon={Wangimg129}
               title='my image.png'
-              onClick={() => openWindow('error')}
+              onClick={() => openWindow('image1')}
             />
 
             <Icon
