@@ -21,13 +21,7 @@ import {
   Confcp118,
   Folder,
   Phone,
-  Ulclient1235,
 } from '@react95/icons'
-
-import styled, { x } from '@xstyled/styled-components'
-
-import '@react95/icons/icons.css'
-
 import { Icon } from '@app/components'
 import {
   BiographyIcon,
@@ -45,51 +39,10 @@ import {
   Desktop,
   Grid,
 } from './Desktop/DesktopContent'
-import {
-  Background, // Background image
-} from './Desktop/Background'
+import { Background } from './Desktop/Background'
+import { calculateCenterPosition, windowOffset, Tag } from './App'
 
-const windowOffset = 20
-
-const calculateCenterPosition = () => {
-  const screenWidth = window.innerWidth
-  const taskbarHeight = 28
-  const screenHeight = window.innerHeight
-  const centerX = (screenWidth - 300) / 2 // Adjust for the window width
-  const centerY = (screenHeight - taskbarHeight - 200) / 3 // Adjust for the window height
-  return { x: centerX, y: centerY }
-}
-
-const colors = [
-  '#FF5733',
-  '#33FF57',
-  '#5733FF',
-  '#FF336E',
-  '#6EFF33',
-  '#336EFF',
-  '#FFB533',
-  '#33FFB5',
-  '#B533FF',
-  '#FF3357',
-  '#57FF33',
-  '#3357FF',
-  '#FF33B5',
-  '#B5FF33',
-  '#33B5FF',
-]
-
-const Tag = styled.div`
-  display: inline-block;
-  margin: 4px;
-  padding: 4px 8px;
-  background: ${(props) => colors[props.index % colors.length]};
-  color: white;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 18px;
-`
-
-const App = () => {
+export const App = () => {
   const tags = [
     'Figma',
     'UX Design',
@@ -183,7 +136,7 @@ const App = () => {
         <Desktop>
           <BiographyIcon openWindow={openWindow} />
           <ResumeIcon openWindow={openWindow} />
-          <ArtworkIcon handleClickLink={handleClickLink} />
+          <ArtworkIcon openWindow={openWindow} />
           <CaseStudiesIcon openWindow={openWindow} />
           <BlogIcon openWindow={openWindow} />
           <ArchivesIcon openWindow={openWindow} />
@@ -642,82 +595,82 @@ const App = () => {
               onClick={() => openWindow('error')}
             />
             {/* <Icon
-              icon={Wangimg129}
-              title='photo3'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo4'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo5'
-              onClick={() => openWindow('')}
-            />
-
-            <Icon
-              icon={Wangimg129}
-              title='photo6'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo7'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo8'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo9'
-              onClick={() => openWindow('')}
-            />
-
-            <Icon
-              icon={Wangimg129}
-              title='photo10'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo11'
-              onClick={() => openWindow('')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='photo12'
-              onClick={() => openWindow('')}
-            /> */}
+                      icon={Wangimg129}
+                      title='photo3'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo4'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo5'
+                      onClick={() => openWindow('')}
+                    />
+        
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo6'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo7'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo8'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo9'
+                      onClick={() => openWindow('')}
+                    />
+        
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo10'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo11'
+                      onClick={() => openWindow('')}
+                    />
+                    <Icon
+                      icon={Wangimg129}
+                      title='photo12'
+                      onClick={() => openWindow('')}
+                    /> */}
           </Grid>
           {/* Include your image gallery here */}
           {/* <ul class='image-gallery'>
-            <li>
-              <img
-                src='/cat1.jpg'
-                alt='Image 1'
-                style={{ width: '25%', height: 'auto' }}
-              />
-            </li>
-
-            <li>
-              <img
-                src='/cat.jpg'
-                alt='Image 1'
-                style={{ width: '25%', height: 'auto' }}
-              />
-            </li> */}
+                      <li>
+                        <img
+                          src='/cat1.jpg'
+                          alt='Image 1'
+                          style={{ width: '25%', height: 'auto' }}
+                        />
+                      </li>
+          
+                      <li>
+                        <img
+                          src='/cat.jpg'
+                          alt='Image 1'
+                          style={{ width: '25%', height: 'auto' }}
+                        />
+                      </li> */}
           {/* <li>
-              <img
-                src='/cat2.jpg'
-                alt='Image 3'
-                style={{ width: '25%', height: 'auto' }}
-              />
-            </li> */}
+                        <img
+                          src='/cat2.jpg'
+                          alt='Image 3'
+                          style={{ width: '25%', height: 'auto' }}
+                        />
+                      </li> */}
           {/* Add more images as needed */}
           {/* </ul> */}
         </Modal>
@@ -812,8 +765,13 @@ const App = () => {
 
             <Icon
               icon={Wangimg129}
-              title='Meowdy Partner.jpg'
+              title='My cats getting along.jpg'
               onClick={() => openWindow('image3')}
+            />
+            <Icon
+              icon={FileText}
+              title='MORE LYRICS.txt'
+              onClick={() => openWindow('lyrics2')}
             />
             <Icon
               icon={FileText}
@@ -822,14 +780,13 @@ const App = () => {
             />
 
             <Icon
-              icon={FileText}
-              title='MORE LYRICS.txt'
-              onClick={() => openWindow('lyrics2')}
+              icon={Wangimg129}
+              title='KILLUA.GIF'
+              onClick={() => openWindow('image6')}
             />
-
             <Icon
               icon={Wangimg129}
-              title='click.png'
+              title='click me.png'
               onClick={() => openWindow('image5')}
             />
             <Icon
@@ -841,11 +798,6 @@ const App = () => {
               icon={FileText}
               title='Tomato Soup Recipe.txt'
               onClick={() => openWindow('recipes')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='KILLUA.GIF'
-              onClick={() => openWindow('image6')}
             />
           </Grid>
         </Modal>
@@ -872,7 +824,7 @@ const App = () => {
         </Modal>
       )}
 
-      {/* {openWindows.artwork && (
+      {openWindows.artwork && (
         <Modal
           width='300'
           height='200'
@@ -884,8 +836,8 @@ const App = () => {
           }
         >
           {<p></p>}
-        </Modal> */}
-      {/* )} */}
+        </Modal>
+      )}
       {openWindows.caseStudies && (
         <Modal
           width='300'
@@ -898,30 +850,18 @@ const App = () => {
           <Grid>
             <Icon
               icon={Folder}
-              title='ALL CASE STUDIES'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              title='case studies'
+              onClick={() => handleClickLink()}
             />
             <Icon
               icon={FileText}
-              title='Duolingo Case Study'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              title='case study 1'
+              onClick={() => handleClickLink()}
             />
             <Icon
               icon={FileText}
-              title='Humane Society Case Study'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              title='case study 2'
+              onClick={() => handleClickLink()}
             />
           </Grid>
         </Modal>
@@ -1138,37 +1078,25 @@ const App = () => {
           width='300'
           height='200'
           icon={<Progman25 variant='32x32_4' />}
-          title='NAASHKA BLOG (ALL)'
+          title='blog'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('blog')}
         >
           <Grid>
             <Icon
               icon={Folder}
-              title='Accessiblity Within Design'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              title='NAASHKA BLOG'
+              onClick={() => handleClickLink()}
             />
             <Icon
               icon={FileText}
-              title='The AI Integrated World'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              title='blog title 1'
+              onClick={() => handleClickLink()}
             />
             <Icon
               icon={FileText}
-              title='Design Helping Animals in Need'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              title='blog title 2'
+              onClick={() => handleClickLink()}
             />
           </Grid>
         </Modal>
@@ -1179,7 +1107,7 @@ const App = () => {
           width='300'
           height='auto'
           icon={<FileText variant='32x32_4' />}
-          title='lyrics.txt'
+          title='artwork'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('lyrics1')}
         >
@@ -1191,46 +1119,35 @@ const App = () => {
               overflowY: 'auto', // Add a vertical scrollbar when needed
             }}
           >
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Have you ever had the feeling you're drawn to someone? (Yeah)</p>
-            <p>And there isn't anything they could have said or done?</p>
-            <p>And every day I see you on your own</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Have you ever had the feeling you're drawn to someone? (Yeah)</p>
-            <p>And there isn't anything they could have said or done?</p>
-            <p>And every day I see you on your own</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Have you ever had the feeling you're drawn to someone? (Yeah)</p>
-            <p>And there isn't anything they could have said or done?</p>
-            <p>And every day I see you on your own</p>
-            <p>If you tell me where, I'm waiting here</p>
-            <p>Everyday like Slumdog Millionaire</p>
-            <p>Bigger than the Twilight love affair</p>
-            <p>I'll be here, Girl, I swear</p>
-            <p>Looking for a, looking for a</p>
-            <p>That you're looking for a boyfriend (yeah)</p>
-            <p>I see that, give me time, you know I'm gonna be that</p>
-            <p>Don't be scared to come put your trust in me</p>
             <p>
-              Can't you see all I really want to be is your boyfriend (yeah)
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>
+                Have you ever had the feeling you're drawn to someone?(Yeah)
+              </p>
+              <p>And there isn't anything they could have said or done?</p>
+              <p>And every day I see you on your own</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>
+                Have you ever had the feeling you're drawn to someone?(Yeah)
+              </p>
+              <p>And there isn't anything they could have said or done?</p>
+              <p>And every day I see you on your own</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>Your boy boy b-b-b-b-b-boyfriend</p>
+              <p>
+                Have you ever had the feeling you're drawn to someone?(Yeah)
+              </p>
+              <p>And there isn't anything they could have said or done?</p>
+              <p>And every day I see you on your own</p>
             </p>
-            <p>Can't fight that</p>
-            <p>Knock me down you know I'm coming right back</p>
-            <p>I don't care at all what you've done before</p>
-            <p>All I really want is to be your</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
-            <p>Your boy boy b-b-b-b-b-boyfriend</p>
           </div>
         </Modal>
       )}
@@ -1300,5 +1217,3 @@ const App = () => {
     </ThemeProvider>
   )
 }
-
-export default App

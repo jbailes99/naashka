@@ -63,12 +63,14 @@ const ResumeIcon = ({ openWindow }) => {
   )
 }
 
-const ArtworkIcon = ({ openWindow }) => {
+const ArtworkIcon = ({ handleClickLink }) => {
   return (
     <Icon
       icon={Desk100}
       title={<span style={{ color: 'white' }}>Artwork</span>}
-      onClick={() => openWindow('artwork')}
+      onClick={() =>
+        handleClickLink('https://tashie0310.wixsite.com/naashka-studio')
+      }
     />
   )
 }
@@ -87,7 +89,7 @@ const BlogIcon = ({ openWindow }) => {
   return (
     <Icon
       icon={Progman25}
-      title={<span style={{ color: 'white' }}>Blog</span>}
+      title={<span style={{ color: 'white' }}>NAASHKA BLOG ALL</span>}
       onClick={() => openWindow('blog')}
     />
   )
