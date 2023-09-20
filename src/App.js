@@ -429,7 +429,7 @@ const App = () => {
             x: window.innerWidth * 0.56,
             y: window.innerHeight * 0.17,
           }}
-          closeModal={() => closeWindow('imageDesktop2')}
+          closeModal={() => closeWindow('MeTash')}
         >
           <img
             src='/images/DesktopMedia/Me_Tash.png'
@@ -477,7 +477,7 @@ const App = () => {
             x: window.innerWidth * 0.7,
             y: window.innerHeight * 0.5,
           }}
-          closeModal={() => closeWindow('imageDesktop1')}
+          closeModal={() => closeWindow('DuoCoffee')}
         >
           <img
             src='/images/DesktopMedia/duo-coffee-made-by-naashka.gif'
@@ -501,7 +501,7 @@ const App = () => {
             x: window.innerWidth * 0.8,
             y: window.innerHeight * 0.01,
           }}
-          closeModal={() => closeWindow('imageDesktop')}
+          closeModal={() => closeWindow('CuteCat')}
         >
           <img
             src='/images/DesktopMedia/cute-cat.gif'
@@ -1034,7 +1034,7 @@ const App = () => {
             <Icon
               icon={Wangimg129}
               title='baby naashka .jpg'
-              onClick={() => openWindow('BabyNaashka')}
+              onClick={() => openWindow('babyNaashka')}
             />
             <Icon
               icon={Wangimg129}
