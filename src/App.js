@@ -395,11 +395,11 @@ const App = () => {
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
           title='me'
-          defaultPosition={{ x: 500, y: 500 }}
+          defaultPosition={{ x: 700, y: 300 }}
           closeModal={() => closeWindow('biographyImage')}
         >
           <img
-            src='/images/dogSelfie.jpg'
+            src='/images/me_sitting_sbux.png'
             alt='Image'
             style={{
               maxWidth: '100%',
