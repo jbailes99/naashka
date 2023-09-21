@@ -19,7 +19,7 @@ const IconText = styled.div`
   width: 80px;
   text-align: center;
   word-break: break-word;
-  font-size: 14px;
+  font-size: 16px;
 `
 
 export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
@@ -55,6 +55,7 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
         cursor='inherit'
         marginLeft='5'
         marginBottom='5'
+        // marginTop='15'
         style={clickCount === 0 ? {} : highlightStyles}
       >
         {React.createElement(icon, {

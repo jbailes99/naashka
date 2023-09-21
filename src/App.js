@@ -22,7 +22,7 @@ import {
   Phone,
 } from '@react95/icons'
 
-import styled from '@xstyled/styled-components'
+import styled, { overflow } from '@xstyled/styled-components'
 
 import '@react95/icons/icons.css'
 
@@ -236,9 +236,9 @@ const App = () => {
 
                 <List.Item
                   icon={<Notepad variant='32x32_4' />}
-                  onClick={() => openWindow('error')}
+                  onClick={() => openWindow('recipesTaboule')}
                 >
-                  Tomato Soup Recipe
+                  Mama's Taboule Recipe
                 </List.Item>
 
                 <List.Item
@@ -588,7 +588,7 @@ const App = () => {
           closeModal={() => closeWindow('babyNaashka')}
         >
           <img
-            src='/images/ArchivePhoots/Baby_Naaskha.jpg'
+            src='/images/ArchivePhoots/Baby_Naaskha.png'
             alt=''
             style={{
               maxWidth: '100%',
@@ -697,7 +697,7 @@ const App = () => {
             />
             <Icon
               icon={Wangimg129}
-              title='whatsgood_nyc.jpg'
+              title='empire_state.jpg'
               onClick={() => openWindow('WhatsGoodNyc')}
             />
             <Icon
@@ -1333,7 +1333,7 @@ const App = () => {
           width='500'
           height='auto'
           icon={<Notepad variant='32x32_4' />}
-          title='recipes'
+          title='Mamas_Taboule_Recipe.txt'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('recipesTaboule')}
         >
@@ -1539,30 +1539,60 @@ const App = () => {
       {openWindows.fax && (
         <Modal
           width='300'
-          height='200'
+          height='auto'
           icon={<Awfext326049 variant='32x32_4' />}
           title='fax'
           defaultPosition={windowPosition}
-          closeModal={() => closeWindow('fax')}
+          closeModal={() => closeWindow('fax')
+        }
         >
           <div
-            style={{
-              padding: '2%',
-              maxHeight: '600px', // Set the white background height as a percentage
-              overflowY: 'auto', // Add a vertical scrollbar when needed
-            }}
-          >
+              style={{
+                backgroundColor: 'white',
+                padding: '0px',
+                height: '400px',
+                overflowY: 'auto',
+                fontSize: '14px'
+              }}
+            >
             {
-              <p
-                style={{
-                  textAlign: 'center',
-                  marginBottom: '10px',
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                }}
-              >
-                👷 Under Construction 👷
-              </p>
+                 <ul>
+        <li>INFJ</li>
+        <li>Polyglot in training</li>
+        <li>All around designer</li>
+        <li>Tech wizard</li>
+        <li>Coffee enthusiast</li>
+        <li>Love building PCs</li>
+        <li>Professional Multitasker</li>
+        <li>Can fix the wifi reset the modem in under 30 seconds</li>
+        <li>Volunteered at:</li>
+        <ul>
+          <li>Animal shelters</li>
+          <li>Animation festival</li>
+          <li>Aiding at soccer clubs for low income families</li>
+          <li>Tutoring assistance to communities facing resource constraints through local centers</li>
+        </ul>
+        <li>Fav manga: Mushoku Tensei, HxH</li>
+        <li>Fav Pokemon: Clefairy, Bulbasaur, Latios</li>
+        <li>Best League of Legends Player (Zed Main)</li>
+        <li>I collect:</li>
+        <ul>
+          <li>Manga</li>
+          <li>Keyboards</li>
+          <li>Perfume</li>
+          <li>Lego sets</li>
+          <li>Sneakers</li>
+          <li>Figures</li>
+          <li>Prints</li>
+          <li>PC parts</li>
+        </ul>
+        <li>Learning the piano, guitar, and violin</li>
+        <li>Culinary Adventurer</li>
+        <li>Tetris Master</li>
+        <li>Soccer Player</li>
+        <li>Pixel Artist</li>
+        <li>Perfectionist</li>
+      </ul>
             }
           </div>
         </Modal>
@@ -1572,13 +1602,24 @@ const App = () => {
           width='300'
           height='200'
           icon={<Progman25 variant='32x32_4' />}
-          title='NAASHKA BLOG (ALL)'
+          title='Blog'
           defaultPosition={windowPosition}
           closeModal={() => closeWindow('blog')}
         >
           <Grid>
-            <Icon
+
+          <Icon
               icon={Folder}
+              title='All Naashka Articles'
+              onClick={() =>
+                handleClickLink(
+                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
+                )
+              }
+            />
+
+            <Icon
+              icon={FileText}
               title='Accessiblity Within Design'
               onClick={() =>
                 handleClickLink(
