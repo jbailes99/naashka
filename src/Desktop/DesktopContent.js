@@ -23,7 +23,7 @@ const Desktop = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   max-height: 100%;
-  grid-gap: 10px;
+  grid-gap: 5px;
 
   position: relative;
   // flex: 1;

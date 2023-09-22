@@ -16,7 +16,7 @@ const CursorIcon = styled.div`
 `
 
 const IconText = styled.div`
-  width: 80px;
+  width: 90px;
   text-align: center;
   word-break: break-word;
   font-size: 16px;
@@ -54,7 +54,7 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
         onClick={onClick}
         cursor='inherit'
         marginLeft='5'
-        marginBottom='5'
+        marginBottom='25'
         // marginTop='15'
         style={clickCount === 0 ? {} : highlightStyles}
       >

@@ -588,7 +588,7 @@ const App = () => {
           closeModal={() => closeWindow('babyNaashka')}
         >
           <img
-            src='/images/ArchivePhoots/Baby_Naaskha.png'
+            src='/images/ArchiveMedia/Baby_Naashka.png'
             alt=''
             style={{
               maxWidth: '100%',
@@ -676,7 +676,7 @@ const App = () => {
       )}
       {openWindows.photos && (
         <Modal
-          width='320'
+          width='340'
           height='200'
           icon={<Progman13 variant='32x32_4' />}
           title='photos'
@@ -994,7 +994,7 @@ const App = () => {
       )}
       {openWindows.archives && (
         <Modal
-          width='320'
+          width='340'
           height='200'
           icon={<Shell3221 variant='32x32_4' />}
           title='archives'
@@ -1095,7 +1095,7 @@ const App = () => {
       {/* )} */}
       {openWindows.caseStudies && (
         <Modal
-          width='300'
+          width='340'
           height='200'
           icon={<Syncui120 variant='32x32_4' />}
           title='case studies'
@@ -1135,7 +1135,7 @@ const App = () => {
       )}
       {openWindows.trash && (
         <Modal
-          width='300'
+          width='340'
           height='200'
           icon={<RecycleFull variant='32x32_4' />}
           title='trash'
@@ -1543,63 +1543,65 @@ const App = () => {
           icon={<Awfext326049 variant='32x32_4' />}
           title='fax'
           defaultPosition={windowPosition}
-          closeModal={() => closeWindow('fax')
-        }
+          closeModal={() => closeWindow('fax')}
         >
           <div
-              style={{
-                backgroundColor: 'white',
-                padding: '0px',
-                height: '400px',
-                overflowY: 'auto',
-                fontSize: '14px'
-              }}
-            >
+            style={{
+              backgroundColor: 'white',
+              padding: '0px',
+              height: '400px',
+              overflowY: 'auto',
+              fontSize: '14px',
+            }}
+          >
             {
-                 <ul>
-        <li>INFJ</li>
-        <li>Polyglot in training</li>
-        <li>All around designer</li>
-        <li>Tech wizard</li>
-        <li>Coffee enthusiast</li>
-        <li>Love building PCs</li>
-        <li>Professional Multitasker</li>
-        <li>Can fix the wifi reset the modem in under 30 seconds</li>
-        <li>Volunteered at:</li>
-        <ul>
-          <li>Animal shelters</li>
-          <li>Animation festival</li>
-          <li>Aiding at soccer clubs for low income families</li>
-          <li>Tutoring assistance to communities facing resource constraints through local centers</li>
-        </ul>
-        <li>Fav manga: Mushoku Tensei, HxH</li>
-        <li>Fav Pokemon: Clefairy, Bulbasaur, Latios</li>
-        <li>Best League of Legends Player (Zed Main)</li>
-        <li>I collect:</li>
-        <ul>
-          <li>Manga</li>
-          <li>Keyboards</li>
-          <li>Perfume</li>
-          <li>Lego sets</li>
-          <li>Sneakers</li>
-          <li>Figures</li>
-          <li>Prints</li>
-          <li>PC parts</li>
-        </ul>
-        <li>Learning the piano, guitar, and violin</li>
-        <li>Culinary Adventurer</li>
-        <li>Tetris Master</li>
-        <li>Soccer Player</li>
-        <li>Pixel Artist</li>
-        <li>Perfectionist</li>
-      </ul>
+              <ul>
+                <li>INFJ</li>
+                <li>Polyglot in training</li>
+                <li>All around designer</li>
+                <li>Tech wizard</li>
+                <li>Coffee enthusiast</li>
+                <li>Love building PCs</li>
+                <li>Professional Multitasker</li>
+                <li>Can fix the wifi reset the modem in under 30 seconds</li>
+                <li>Volunteered at:</li>
+                <ul>
+                  <li>Animal shelters</li>
+                  <li>Animation festival</li>
+                  <li>Aiding at soccer clubs for low income families</li>
+                  <li>
+                    Tutoring assistance to communities facing resource
+                    constraints through local centers
+                  </li>
+                </ul>
+                <li>Fav manga: Mushoku Tensei, HxH</li>
+                <li>Fav Pokemon: Clefairy, Bulbasaur, Latios</li>
+                <li>Best League of Legends Player (Zed Main)</li>
+                <li>I collect:</li>
+                <ul>
+                  <li>Manga</li>
+                  <li>Keyboards</li>
+                  <li>Perfume</li>
+                  <li>Lego sets</li>
+                  <li>Sneakers</li>
+                  <li>Figures</li>
+                  <li>Prints</li>
+                  <li>PC parts</li>
+                </ul>
+                <li>Learning the piano, guitar, and violin</li>
+                <li>Culinary Adventurer</li>
+                <li>Tetris Master</li>
+                <li>Soccer Player</li>
+                <li>Pixel Artist</li>
+                <li>Perfectionist</li>
+              </ul>
             }
           </div>
         </Modal>
       )}
       {openWindows.blog && (
         <Modal
-          width='300'
+          width='340'
           height='200'
           icon={<Progman25 variant='32x32_4' />}
           title='Blog'
@@ -1607,8 +1609,7 @@ const App = () => {
           closeModal={() => closeWindow('blog')}
         >
           <Grid>
-
-          <Icon
+            <Icon
               icon={Folder}
               title='All Naashka Articles'
               onClick={() =>
