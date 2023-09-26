@@ -40,7 +40,8 @@ const Desktop = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 1px;
+  padding: 10px;
   max-height: 170px;
   overflow-y: auto;
 `
@@ -66,7 +67,10 @@ const ResumeIcon = ({ openWindow }) => {
     <Icon
       icon={Mailnews19}
       title={<span style={{ color: 'white' }}>Résumé</span>}
-      onClick={() => openWindow('resume')}
+      onClick={() => {
+        openWindow('resume')
+        openWindow('resumeImage')
+      }}
     />
   )
 }

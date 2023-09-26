@@ -542,7 +542,10 @@ const App = () => {
           height='auto'
           icon={<Wangimg129 variant='32x32_4' />}
           title='Me_Core.jpg'
-          defaultPosition={windowPosition}
+          defaultPosition={{
+            x: window.innerWidth * 0.6,
+            y: window.innerHeight * 0.1,
+          }}
           closeModal={() => closeWindow('SnorlaxEat')}
         >
           <img
@@ -923,6 +926,75 @@ const App = () => {
           />
         </Modal>
       )}
+      {openWindows.resumeImage && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='pls_hire.jpg'
+          defaultPosition={windowPosition}
+          closeModal={() => closeWindow('resumeImage')}
+        >
+          <img
+            src='/images/ResumeMedia/ResumeImage.png'
+            alt=''
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+      {openWindows.Me_Core1 && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='meh.jpg'
+          defaultPosition={{
+            x: window.innerWidth * 0.015,
+            y: window.innerHeight * 0.05,
+          }}
+          closeModal={() => closeWindow('Me_Core1')}
+        >
+          <img
+            src='/images/ArchiveMedia/carWindow.png'
+            alt=''
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
+      {openWindows.Me_Core2 && (
+        <Modal
+          width='auto'
+          height='auto'
+          icon={<Wangimg129 variant='32x32_4' />}
+          title='witch.jpg'
+          defaultPosition={{
+            x: window.innerWidth * 0.15,
+            y: window.innerHeight * 0.3,
+          }}
+          closeModal={() => closeWindow('Me_Core2')}
+        >
+          <img
+            src='/images/ArchiveMedia/witch.jpg'
+            alt=''
+            style={{
+              maxWidth: '100%',
+              maxHeight: '80%',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+        </Modal>
+      )}
       {openWindows.TeaTime && (
         <Modal
           width='auto'
@@ -1020,9 +1092,13 @@ const App = () => {
             />
 
             <Icon
-              icon={FileText}
+              icon={Wangimg129}
               title='Me_Core.jpg'
-              onClick={() => openWindow('SnorlaxEat')}
+              onClick={() => {
+                openWindow('SnorlaxEat')
+                openWindow('Me_Core1')
+                openWindow('Me_Core2')
+              }}
             />
 
             <Icon
