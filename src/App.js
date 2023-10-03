@@ -89,7 +89,7 @@ const Tag = styled.div`
   display: inline-block;
   margin: 4px;
   padding: 4px 8px;
-  background: ${(props) => colors[props.index % colors.length]};
+  background: ${props => colors[props.index % colors.length]};
   color: white;
   border-radius: 4px;
   font-weight: bold;
@@ -147,7 +147,7 @@ const App = () => {
     }
   }
 
-  const openWindow = (windowId) => {
+  const openWindow = windowId => {
     if (!openWindows[windowId]) {
       const newPosition = {
         x: windowPosition.x + windowOffset,
@@ -155,15 +155,15 @@ const App = () => {
       }
       setWindowPosition(newPosition)
 
-      setOpenWindows((prevOpenWindows) => ({
+      setOpenWindows(prevOpenWindows => ({
         ...prevOpenWindows,
         [windowId]: true,
       }))
     }
   }
 
-  const closeWindow = (windowId) => {
-    setOpenWindows((prevOpenWindows) => ({
+  const closeWindow = windowId => {
+    setOpenWindows(prevOpenWindows => ({
       ...prevOpenWindows,
       [windowId]: false,
     }))
@@ -172,7 +172,7 @@ const App = () => {
   const instagramURL = 'https://www.instagram.com/naashka__/'
   const linkedInURL = 'https://www.linkedin.com/in/naashka/'
 
-  const handleClickLink = (url) => {
+  const handleClickLink = url => {
     window.open(url, '_blank')
   }
   return (
@@ -227,24 +227,15 @@ const App = () => {
                   Linkedin
                 </List.Item>
 
-                <List.Item
-                  icon={<Mailnews19 variant='32x32_4' />}
-                  onClick={() => openWindow('resume')}
-                >
+                <List.Item icon={<Mailnews19 variant='32x32_4' />} onClick={() => openWindow('resume')}>
                   Résumé
                 </List.Item>
 
-                <List.Item
-                  icon={<Notepad variant='32x32_4' />}
-                  onClick={() => openWindow('recipesTaboule')}
-                >
+                <List.Item icon={<Notepad variant='32x32_4' />} onClick={() => openWindow('recipesTaboule')}>
                   Mama's Taboule Recipe
                 </List.Item>
 
-                <List.Item
-                  icon={<Progman13 variant='32x32_4' />}
-                  onClick={() => openWindow('photos')}
-                >
+                <List.Item icon={<Progman13 variant='32x32_4' />} onClick={() => openWindow('photos')}>
                   Photos
                 </List.Item>
               </List>
@@ -306,12 +297,9 @@ const App = () => {
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
-                Branding & User Experience designer for ESDC, Government of
-                Canada.
+                Branding & User Experience designer for ESDC, Government of Canada.
               </p>
-              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
-                📍 Ottawa, Canada
-              </p>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>📍 Ottawa, Canada</p>
             </div>
             <div
               style={{
@@ -342,36 +330,27 @@ const App = () => {
             </div>
             <div style={{ fontSize: '20px' }}>
               <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                Hey there 👋🏼 I’m Natasha. I’m an Ottawa based designer
-                specializing in brand design, user experience design, and
-                illustrations that emphasize functionality, creativity, and
-                jubilation.
+                Hey there 👋🏼 I’m Natasha. I’m an Ottawa based designer specializing in brand design, user experience
+                design, and illustrations that emphasize functionality, creativity, and jubilation.
               </p>
               <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                My professional focus centers around collaborative artistry and
-                the joy of exploring various creative avenues. My fascination
-                with technology stems from its ability to foster connections,
-                empower individuals, and broaden our creative playground. My
-                philosophy centers around crafting design products and solutions
-                that prioritize the human experience. What drives me is the
-                vision of creating meaningful and intuitive experiences that
-                cater to the needs and preferences of users.
+                My professional focus centers around collaborative artistry and the joy of exploring various creative
+                avenues. My fascination with technology stems from its ability to foster connections, empower
+                individuals, and broaden our creative playground. My philosophy centers around crafting design products
+                and solutions that prioritize the human experience. What drives me is the vision of creating meaningful
+                and intuitive experiences that cater to the needs and preferences of users.
               </p>
               <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                With a solid background of 5+ years designing and illustrating
-                for both the public and private sectors, I hope to co-create
-                with curious people who share my passion for creativity,
-                community, and culture, and to have fun, of course.
+                With a solid background of 5+ years designing and illustrating for both the public and private sectors,
+                I hope to co-create with curious people who share my passion for creativity, community, and culture, and
+                to have fun, of course.
               </p>
               <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                If I'm not practicing my craft, you'll find me catching up on my
-                favorite anime, learning some code, running some League of
-                Legends, mastering a new language, clumsily practicing some
-                latte art, or managing my sticker shop.
+                If I'm not practicing my craft, you'll find me catching up on my favorite anime, learning some code,
+                running some League of Legends, mastering a new language, clumsily practicing some latte art, or
+                managing my sticker shop.
               </p>
-              <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                Pleased to e-meet you! 😊
-              </p>
+              <p style={{ fontSize: '18px', marginBottom: '20px' }}>Pleased to e-meet you! 😊</p>
             </div>
           </div>
         </Modal>
@@ -687,57 +666,21 @@ const App = () => {
           closeModal={() => closeWindow('photos')}
         >
           <Grid>
-            <Icon
-              icon={Wangimg129}
-              title='ssense_mtl.jpg'
-              onClick={() => openWindow('Ssense')}
-            />
+            <Icon icon={Wangimg129} title='ssense_mtl.jpg' onClick={() => openWindow('Ssense')} />
 
-            <Icon
-              icon={Wangimg129}
-              title='those_who_hesitate.jpg'
-              onClick={() => openWindow('ThoseWhoHesitate')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='empire_state.jpg'
-              onClick={() => openWindow('WhatsGoodNyc')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='streets_is talking.jpg'
-              onClick={() => openWindow('StreetsTalking')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='idek.jpg'
-              onClick={() => openWindow('Idek')}
-            />
+            <Icon icon={Wangimg129} title='those_who_hesitate.jpg' onClick={() => openWindow('ThoseWhoHesitate')} />
+            <Icon icon={Wangimg129} title='empire_state.jpg' onClick={() => openWindow('WhatsGoodNyc')} />
+            <Icon icon={Wangimg129} title='streets.jpg' onClick={() => openWindow('StreetsTalking')} />
+            <Icon icon={Wangimg129} title='idek.jpg' onClick={() => openWindow('Idek')} />
 
-            <Icon
-              icon={Wangimg129}
-              title='happy_girl.jpg'
-              onClick={() => openWindow('HappyGirl')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='ski_trip.jpg'
-              onClick={() => openWindow('SkiTrip')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='tea time.jpg'
-              onClick={() => openWindow('TeaTime')}
-            />
+            <Icon icon={Wangimg129} title='happy_girl.jpg' onClick={() => openWindow('HappyGirl')} />
+            <Icon icon={Wangimg129} title='ski_trip.jpg' onClick={() => openWindow('SkiTrip')} />
+            <Icon icon={Wangimg129} title='tea time.jpg' onClick={() => openWindow('TeaTime')} />
 
             <Icon
               icon={Folder}
               title='ALL PICTURES'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-gallery'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/naashka-gallery')}
             />
             {/* <Icon
               icon={Wangimg129}
@@ -1074,22 +1017,10 @@ const App = () => {
           closeModal={() => closeWindow('archives')}
         >
           <Grid>
-            <Icon
-              icon={FileText}
-              title='LYRICS.txt'
-              onClick={() => openWindow('lyrics1')}
-            />
+            <Icon icon={FileText} title='LYRICS.txt' onClick={() => openWindow('lyrics1')} />
 
-            <Icon
-              icon={Wangimg129}
-              title='Meowdy Partner.jpg'
-              onClick={() => openWindow('MeowdyPartner')}
-            />
-            <Icon
-              icon={FileText}
-              title='Momas Taboule Recipe.txt'
-              onClick={() => openWindow('recipesTaboule')}
-            />
+            <Icon icon={Wangimg129} title='Meowdy Partner.jpg' onClick={() => openWindow('MeowdyPartner')} />
+            <Icon icon={FileText} title='Mamas Taboule Recipe.txt' onClick={() => openWindow('recipesTaboule')} />
 
             <Icon
               icon={Wangimg129}
@@ -1101,37 +1032,17 @@ const App = () => {
               }}
             />
 
-            <Icon
-              icon={Wangimg129}
-              title='Duo_XP by_Naashka .gif'
-              onClick={() => openWindow('DuoXP')}
-            />
+            <Icon icon={Wangimg129} title='Duo_XP by_Naashka .gif' onClick={() => openWindow('DuoXP')} />
 
-            <Icon
-              icon={Wangimg129}
-              title='baby naashka .jpg'
-              onClick={() => openWindow('babyNaashka')}
-            />
+            <Icon icon={Wangimg129} title='baby naashka .jpg' onClick={() => openWindow('babyNaashka')} />
             <Icon
               icon={Wangimg129}
               title='Something_Suspicious.gif'
               onClick={() => openWindow('SomethingSuspicious')}
             />
-            <Icon
-              icon={FileText}
-              title='world peace museum.jpg'
-              onClick={() => openWindow('worldPeace')}
-            />
-            <Icon
-              icon={FileText}
-              title='Tomato Soup Recipe.txt'
-              onClick={() => openWindow('TomatoRecipe')}
-            />
-            <Icon
-              icon={Wangimg129}
-              title='KILLUA.GIF'
-              onClick={() => openWindow('killua')}
-            />
+            <Icon icon={FileText} title='world peace museum.jpg' onClick={() => openWindow('worldPeace')} />
+            <Icon icon={FileText} title='Tomato Soup Recipe.txt' onClick={() => openWindow('TomatoRecipe')} />
+            <Icon icon={Wangimg129} title='KILLUA.GIF' onClick={() => openWindow('killua')} />
           </Grid>
         </Modal>
       )}
@@ -1147,10 +1058,8 @@ const App = () => {
           <Grid>
             <Icon
               icon={Progman19}
-              title='watch_me.mov'
-              onClick={() =>
-                handleClickLink('https://www.youtube.com/shorts/F2Ostp99Jj4')
-              }
+              title='watch me.mov'
+              onClick={() => handleClickLink('https://www.youtube.com/shorts/F2Ostp99Jj4')}
             />
           </Grid>
         </Modal>
@@ -1182,29 +1091,17 @@ const App = () => {
             <Icon
               icon={Folder}
               title='ALL CASE STUDIES'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/case-studies')}
             />
             <Icon
               icon={FileText}
               title='Duolingo Case Study'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/case-studies')}
             />
             <Icon
               icon={FileText}
               title='Humane Society Case Study'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/case-studies'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/case-studies')}
             />
           </Grid>
         </Modal>
@@ -1219,27 +1116,11 @@ const App = () => {
           closeModal={() => closeWindow('trash')}
         >
           <Grid>
-            <Icon
-              icon={FileText}
-              title='REMAINING BRAIN CELLS'
-              onClick={() => openWindow('error')}
-            />
-            <Icon
-              icon={FileText}
-              title='CAT WORLD DOMINATION PLAN'
-              onClick={() => openWindow('error1')}
-            />
-            <Icon
-              icon={Gcdef100}
-              title='League of Legends'
-              onClick={() => openWindow('error2')}
-            />
+            <Icon icon={WindowsExplorer} title='KRABBY PATTY SECRET FORUMLA' onClick={() => openWindow('error')} />
 
-            <Icon
-              icon={WindowsExplorer}
-              title='KRABBY PATTY SECRET FORUMLA'
-              onClick={() => openWindow('error')}
-            />
+            <Icon icon={FileText} title='CAT WORLD DOMINATION PLAN' onClick={() => openWindow('error1')} />
+            <Icon icon={Gcdef100} title='League of Legends' onClick={() => openWindow('error2')} />
+            <Icon icon={FileText} title='REMAINING BRAIN CELLS' onClick={() => openWindow('error')} />
           </Grid>
         </Modal>
       )}
@@ -1289,57 +1170,34 @@ const App = () => {
                   <li>2 cups fresh basil leaves (packed)</li>
                   <li>1/2 cup grated Parmesan cheese</li>
                   <li>1/2 cup extra virgin olive oil</li>
-                  <li>
-                    1/3 cup pine nuts (can sub with cashews or sunflower seeds
-                    for a nut-free pesto!)
-                  </li>
+                  <li>1/3 cup pine nuts (can sub with cashews or sunflower seeds for a nut-free pesto!)</li>
                   <li>3 cloves garlic, minced</li>
                   <li>1/4 teaspoon salt, or more to taste</li>
-                  <li>
-                    1/4 teaspoon freshly ground black pepper, or more to taste
-                  </li>
+                  <li>1/4 teaspoon freshly ground black pepper, or more to taste</li>
                   <li>1 TSP Honey</li>
                   <li>¼ TSP Lemon</li>
                 </ul>
 
                 <ol>
                   <li>
-                    Wash about 10 tomatoes, cut off the stems and make a slit
-                    into each one. Place in a pot of water to boil.
+                    Wash about 10 tomatoes, cut off the stems and make a slit into each one. Place in a pot of water to
+                    boil.
                   </li>
+                  <li>Once the tomatoes are soft, drain them from the pot and rinse off with cold water.</li>
+                  <li>Place tomatoes in a blender and blend until they reach a liquid state.</li>
+                  <li>Place the blended tomatoes into a large pot (this is what you’ll use for the soup!)</li>
+                  <li>Heat olive oil/butter over medium heat in a frying pan and add onion. Cook for 2 minutes.</li>
+                  <li>Add the garlic to the pan and cook for another minute.</li>
+                  <li>Place the now lightly fried onions and garlic into the soup pot along with the tomatoes.</li>
                   <li>
-                    Once the tomatoes are soft, drain them from the pot and
-                    rinse off with cold water.
-                  </li>
-                  <li>
-                    Place tomatoes in a blender and blend until they reach a
-                    liquid state.
-                  </li>
-                  <li>
-                    Place the blended tomatoes into a large pot (this is what
-                    you’ll use for the soup!)
-                  </li>
-                  <li>
-                    Heat olive oil/butter over medium heat in a frying pan and
-                    add onion. Cook for 2 minutes.
-                  </li>
-                  <li>
-                    Add the garlic to the pan and cook for another minute.
-                  </li>
-                  <li>
-                    Place the now lightly fried onions and garlic into the soup
-                    pot along with the tomatoes.
-                  </li>
-                  <li>
-                    Add 2-3 cups of water, 2 cups of veggie stock, pepper, salt,
-                    oregano, and tomato paste to the pot. (Should not be too
-                    thick or too watery, add more water/stock if needed).
+                    Add 2-3 cups of water, 2 cups of veggie stock, pepper, salt, oregano, and tomato paste to the pot.
+                    (Should not be too thick or too watery, add more water/stock if needed).
                   </li>
                   <li>Bring to a boil, then reduce to a simmer.</li>
                   <li>Add sweetener (honey)</li>
                   <li>
-                    Cook on Medium heat for 30 minutes until the mixture is well
-                    blended and has achieved a smooth consistency.
+                    Cook on Medium heat for 30 minutes until the mixture is well blended and has achieved a smooth
+                    consistency.
                   </li>
                   <li>Add the heavy cream and Feta Cheese (crumble it!)</li>
                   <li>Add More salt/pesto/fresh basil if needed.</li>
@@ -1347,54 +1205,41 @@ const App = () => {
                 </ol>
 
                 <h2>Basil Pesto Sauce Recipe</h2>
+                <p>(Inspired by Elise Baur’s recipe with my own modifications 😊)</p>
                 <p>
-                  (Inspired by Elise Baur’s recipe with my own modifications 😊)
-                </p>
-                <p>
-                  <em>
-                    Equipment: Food Processor or anything that does the job
-                    really
-                  </em>
+                  <em>Equipment: Food Processor or anything that does the job really</em>
                 </p>
                 <ul>
                   <li>2 cups fresh basil leaves (packed)</li>
                   <li>1/2 cup grated Parmesan cheese</li>
                   <li>1/2 cup extra virgin olive oil</li>
                   <li>
-                    1/3 cup pine nuts (can sub with cashews or sunflower seeds
-                    for a nut-free pesto! :D allergy friendly woo)
+                    1/3 cup pine nuts (can sub with cashews or sunflower seeds for a nut-free pesto! :D allergy friendly
+                    woo)
                   </li>
                   <li>3 cloves garlic, minced.</li>
                   <li>1/4 teaspoon salt, or more to taste</li>
-                  <li>
-                    1/4 teaspoon freshly ground black pepper, or more to taste.
-                  </li>
+                  <li>1/4 teaspoon freshly ground black pepper, or more to taste.</li>
                   <li>1 TBS Honey</li>
                 </ul>
 
                 <ol>
                   <li>
-                    Pulse the basil and pine nuts: Place the basil leaves and
-                    pine nuts into the bowl of a food processor and pulse
-                    several times.
+                    Pulse the basil and pine nuts: Place the basil leaves and pine nuts into the bowl of a food
+                    processor and pulse several times.
                   </li>
                   <li>
-                    Add the cheese and garlic! Add the garlic and Parmesan
-                    cheese and pulse a few more times. Scrape down the sides of
-                    the food processor with a rubber spatula, you want that even
-                    mixture ya know.
+                    Add the cheese and garlic! Add the garlic and Parmesan cheese and pulse a few more times. Scrape
+                    down the sides of the food processor with a rubber spatula, you want that even mixture ya know.
                   </li>
                   <li>
-                    Gradually Pour in the olive oil: If you can do it while the
-                    food processor is running that’s great, it helps the mixture
-                    emulsify. But if you’re like me and have a dusty one, you
-                    gotta gradually stop pulsing and add a bit of oil at a time!
-                    Don’t forget to occasionally scrape down the sides.
+                    Gradually Pour in the olive oil: If you can do it while the food processor is running that’s great,
+                    it helps the mixture emulsify. But if you’re like me and have a dusty one, you gotta gradually stop
+                    pulsing and add a bit of oil at a time! Don’t forget to occasionally scrape down the sides.
                   </li>
                   <li>
-                    Time to season your pesto sauce: Add salt and freshly ground
-                    black pepper to taste. Add lemon and honey to taste (don’t
-                    overdo it with these two!) Pulse.
+                    Time to season your pesto sauce: Add salt and freshly ground black pepper to taste. Add lemon and
+                    honey to taste (don’t overdo it with these two!) Pulse.
                   </li>
                   <li>You now have your own pesto 😊</li>
                 </ol>
@@ -1438,59 +1283,40 @@ const App = () => {
                   <li>1-2 teaspoon dry mint</li>
                   <li>1 Tsp Salt</li>
                   <li>1 tbsp Fine burghul - must be fine, not coarse.</li>
+                  <li>Cabbage leaves, cleaned, chopped or romaine lettuce to serve with or without</li>
                   <li>
-                    Cabbage leaves, cleaned, chopped or romaine lettuce to serve
-                    with or without
-                  </li>
-                  <li>
-                    Tiny pinch of black pepper (optional) - my mom doesn’t
-                    typically add it but mentioned that this is a popular extra.
+                    Tiny pinch of black pepper (optional) - my mom doesn’t typically add it but mentioned that this is a
+                    popular extra.
                   </li>
                 </ul>
 
                 <h2>Steps:</h2>
                 <ol>
                   <li>
-                    Soak parsley, green onion, fresh mint, and tomatoes in a big
-                    bowl of water and a little bit of salt and white vinegar. To
-                    clean, eliminate bacteria and allow dirt to sink. Leave them
-                    soaking for 20-25 minutes.
+                    Soak parsley, green onion, fresh mint, and tomatoes in a big bowl of water and a little bit of salt
+                    and white vinegar. To clean, eliminate bacteria and allow dirt to sink. Leave them soaking for 20-25
+                    minutes.
                   </li>
-                  <li>
-                    Wash each piece of vegetable VERY well (greens hold a lot of
-                    dirt!)
-                  </li>
-                  <li>
-                    Allow veggies to dry. They must be fully dried prior to
-                    chopping.
-                  </li>
-                  <li>
-                    Chop the parsley very finely. Make sure they don’t hold any
-                    water.
-                  </li>
+                  <li>Wash each piece of vegetable VERY well (greens hold a lot of dirt!)</li>
+                  <li>Allow veggies to dry. They must be fully dried prior to chopping.</li>
+                  <li>Chop the parsley very finely. Make sure they don’t hold any water.</li>
                   <li>Chop/dice the onion very finely.</li>
                   <li>Pick leaves off fresh mint and finely chop.</li>
                   <li>Next, finely dice the tomatoes.</li>
                   <li>Add all veggies to a large/steep bowl.</li>
                   <li>
-                    Mix all the veggies together until everything is evenly
-                    dispersed. The parsley should be the main ingredient and
-                    mostly present. If you find the ratio is off, add more
-                    parsley.
+                    Mix all the veggies together until everything is evenly dispersed. The parsley should be the main
+                    ingredient and mostly present. If you find the ratio is off, add more parsley.
                   </li>
                   <li>Once properly mixed, squeeze 1 lemon into the bowl.</li>
                   <li>Add salt, dry mint, fine burghul. Mix again.</li>
                   <li>
-                    Gradually add teaspoons of olive oil. You want the parsley
-                    to remain quite dry; you don’t want too much oil. Add as you
-                    go. Feel free to add more lemon juice or pepper. Make sure
-                    to keep tasting and not add too much!
+                    Gradually add teaspoons of olive oil. You want the parsley to remain quite dry; you don’t want too
+                    much oil. Add as you go. Feel free to add more lemon juice or pepper. Make sure to keep tasting and
+                    not add too much!
                   </li>
                   <li>Mix again.</li>
-                  <li>
-                    Serve with washed lettuce or cabbage leaves or eat with just
-                    a spoon.
-                  </li>
+                  <li>Serve with washed lettuce or cabbage leaves or eat with just a spoon.</li>
                 </ol>
 
                 <p>Enjoy my mama’s tabouleh recipe 😊</p>
@@ -1511,46 +1337,30 @@ const App = () => {
                   <li>١ ملعقه كبيره ملح</li>
                   <li>١ ملعقه كبيره برغل ناعم</li>
                   <li>ورق ملفوف او ورق خس لاكل التبوله (حسب الاختيار)</li>
-                  <li>
-                    قرصه بسيطه من الفلفل الاسود (اختياري) - امي عادة لا تضيفه
-                    ولكنها ذكرت ان هذا شائع.
-                  </li>
+                  <li>قرصه بسيطه من الفلفل الاسود (اختياري) - امي عادة لا تضيفه ولكنها ذكرت ان هذا شائع.</li>
                 </ul>
 
                 <h2 dir='rtl'>الطريقه:</h2>
                 <ol dir='rtl'>
                   <li>
-                    ينقع البقدونس والبصل الاخضر والنعناع والبندوره في وعاء كبير
-                    من الماء ويضاف قليل من الملح والخل الابيض لتنظيف الخضار من
-                    الاوساخ وتركهم منقوعين لمده ٢٠ او ٢٥ دقيقه
+                    ينقع البقدونس والبصل الاخضر والنعناع والبندوره في وعاء كبير من الماء ويضاف قليل من الملح والخل
+                    الابيض لتنظيف الخضار من الاوساخ وتركهم منقوعين لمده ٢٠ او ٢٥ دقيقه
                   </li>
-                  <li>
-                    ثم تغسل الخضار ورقه ورقه جيدا لان الخضار يحمل اوساخ كثيره
-                  </li>
+                  <li>ثم تغسل الخضار ورقه ورقه جيدا لان الخضار يحمل اوساخ كثيره</li>
                   <li>نترك مجال للخضار حتى تنشف جيدا قبل التقطيع</li>
-                  <li>
-                    نبداء بتقطيع البقدونس ناعما جدا ونتاكد بان البقدونس لا يحمل
-                    كثير من الماء اثناء التقطيع
-                  </li>
+                  <li>نبداء بتقطيع البقدونس ناعما جدا ونتاكد بان البقدونس لا يحمل كثير من الماء اثناء التقطيع</li>
                   <li>تقطع البصل ناعما</li>
                   <li>تاخد اوراق النعناع وتقطعها ناعما</li>
                   <li>واخيرا تقطع البندوره ناعما</li>
                   <li>خلط جميع</li>
-                  <li>
-                    خلط جميع الخضار مع بعض في جاط كبير ونتاكد بان البقدونس يجب
-                    ان يكون هو الاكثر كمية بين الخضار
-                  </li>
+                  <li>خلط جميع الخضار مع بعض في جاط كبير ونتاكد بان البقدونس يجب ان يكون هو الاكثر كمية بين الخضار</li>
                   <li>من بعد الخلط اضافه عصير الحامض</li>
                   <li>
-                    اضافه الملح والنعناع اليابس والبرغل وخلطهم جيدا ثم اضافه زيت
-                    الزيتون حسب الرغبه والاهم ان يبقى خليط البقدونس ناشفا نوعا
-                    ما ولا يضاف اليه الكثير من الزيت
+                    اضافه الملح والنعناع اليابس والبرغل وخلطهم جيدا ثم اضافه زيت الزيتون حسب الرغبه والاهم ان يبقى خليط
+                    البقدونس ناشفا نوعا ما ولا يضاف اليه الكثير من الزيت
                   </li>
                   <li>ثم خلطهم جيدا</li>
-                  <li>
-                    ويقدمو مع ورق الخس المغسول او ورق الملفوف المغسول او تاكل
-                    التبوله بالملعقه.
-                  </li>
+                  <li>ويقدمو مع ورق الخس المغسول او ورق الملفوف المغسول او تاكل التبوله بالملعقه.</li>
                 </ol>
 
                 <p dir='rtl'>Enjoy my mama’s tabouleh recipe 😊</p>
@@ -1586,10 +1396,7 @@ const App = () => {
               Reach me at <br />
               <br />
               <span style={{ fontWeight: 'bold' }}>
-                <a
-                  href={`mailto:${emailAddress}`}
-                  style={{ color: 'blue', textDecoration: 'underline' }}
-                >
+                <a href={`mailto:${emailAddress}`} style={{ color: 'blue', textDecoration: 'underline' }}>
                   {emailAddress}
                 </a>
               </span>
@@ -1645,10 +1452,7 @@ const App = () => {
                   <li>Animal shelters</li>
                   <li>Animation festival</li>
                   <li>Aiding at soccer clubs for low income families</li>
-                  <li>
-                    Tutoring assistance to communities facing resource
-                    constraints through local centers
-                  </li>
+                  <li>Tutoring assistance to communities facing resource constraints through local centers</li>
                 </ul>
                 <li>Fav manga: Mushoku Tensei, HxH</li>
                 <li>Fav Pokemon: Clefairy, Bulbasaur, Latios</li>
@@ -1688,39 +1492,23 @@ const App = () => {
             <Icon
               icon={Folder}
               title='All Naashka Articles'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/naashka-blog')}
             />
 
             <Icon
               icon={FileText}
               title='Accessiblity Within Design'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/naashka-blog')}
             />
             <Icon
               icon={FileText}
               title='The AI Integrated World'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/naashka-blog')}
             />
             <Icon
               icon={FileText}
               title='Design Helping Animals in Need'
-              onClick={() =>
-                handleClickLink(
-                  'https://tashie0310.wixsite.com/naashka-studio/naashka-blog'
-                )
-              }
+              onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio/naashka-blog')}
             />
           </Grid>
         </Modal>
@@ -1771,9 +1559,7 @@ const App = () => {
             <p>That you're looking for a boyfriend (yeah)</p>
             <p>I see that, give me time, you know I'm gonna be that</p>
             <p>Don't be scared to come put your trust in me</p>
-            <p>
-              Can't you see all I really want to be is your boyfriend (yeah)
-            </p>
+            <p>Can't you see all I really want to be is your boyfriend (yeah)</p>
             <p>Can't fight that</p>
             <p>Knock me down you know I'm coming right back</p>
             <p>I don't care at all what you've done before</p>
