@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  TaskBar,
-  List,
-  ThemeProvider,
-  GlobalStyle,
-  Modal,
-  Video,
-} from '@react95/core'
+import { TaskBar, List, ThemeProvider, GlobalStyle, Modal, Video } from '@react95/core'
 import {
   Wangimg129,
   WindowsExplorer,
