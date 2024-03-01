@@ -61,7 +61,7 @@ export const Icon = React.memo(({ icon, title, onClick, iconSize }) => {
         {React.createElement(icon, {
           title,
           variant: size,
-          style: { width: 40, height: 40, cursor: 'inherit' },
+          style: { width: 50, height: 50, cursor: 'inherit' },
         })}
         <IconText>{title}</IconText>
       </x.div>

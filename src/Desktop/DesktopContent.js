@@ -46,8 +46,7 @@ const Grid = styled.div`
   overflow-y: auto;
 `
 
-const spotifyURL =
-  'https://open.spotify.com/playlist/77JUipFLchNc0lLDR5toAW?si=31db6ab477ea4b7c'
+const spotifyURL = 'https://open.spotify.com/playlist/77JUipFLchNc0lLDR5toAW?si=31db6ab477ea4b7c'
 
 const BiographyIcon = ({ openWindow }) => {
   return (
@@ -80,9 +79,7 @@ const ArtworkIcon = ({ handleClickLink }) => {
     <Icon
       icon={Desk100}
       title={<span style={{ color: 'white' }}>Artwork</span>}
-      onClick={() =>
-        handleClickLink('https://tashie0310.wixsite.com/naashka-studio')
-      }
+      onClick={() => handleClickLink('https://tashie0310.wixsite.com/naashka-studio')}
     />
   )
 }
@@ -99,11 +96,7 @@ const CaseStudiesIcon = ({ openWindow }) => {
 
 const BlogIcon = ({ openWindow }) => {
   return (
-    <Icon
-      icon={Progman25}
-      title={<span style={{ color: 'white' }}>Blog</span>}
-      onClick={() => openWindow('blog')}
-    />
+    <Icon icon={Progman25} title={<span style={{ color: 'white' }}>Blog</span>} onClick={() => openWindow('blog')} />
   )
 }
 
@@ -159,21 +152,13 @@ const VideosIcon = ({ openWindow }) => {
 
 const ContactIcon = ({ openWindow }) => {
   return (
-    <Icon
-      icon={Phone}
-      title={<span style={{ color: 'white' }}>Contact</span>}
-      onClick={() => openWindow('contact')}
-    />
+    <Icon icon={Phone} title={<span style={{ color: 'white' }}>Contact</span>} onClick={() => openWindow('contact')} />
   )
 }
 
 const FaxIcon = ({ openWindow }) => {
   return (
-    <Icon
-      icon={Awfext326049}
-      title={<span style={{ color: 'white' }}>Fax</span>}
-      onClick={() => openWindow('fax')}
-    />
+    <Icon icon={Awfext326049} title={<span style={{ color: 'white' }}>Fax</span>} onClick={() => openWindow('fax')} />
   )
 }
 
