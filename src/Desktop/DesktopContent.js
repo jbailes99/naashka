@@ -114,7 +114,7 @@ const TrashIcon = ({ openWindow }) => {
   return (
     <Icon
       icon={RecycleFull}
-      title={<span style={{ color: 'white' }}>TRASSSSSSSSSSSSSSSSSH</span>}
+      title={<span style={{ color: 'white' }}>Trash</span>}
       onClick={() => openWindow('trash')}
     />
   )
