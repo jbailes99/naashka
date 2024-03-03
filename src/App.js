@@ -140,7 +140,7 @@ const App = () => {
   }, [])
 
   const openResume = () => {
-    const resumeURL = '/Natasha_Resume.pdf' // Replace with the actual path to your resume PDF
+    const resumeURL = `${process.env.PUBLIC_URL}/Natasha_Resume.pdf` // Replace with the actual path to your resume PDF
     const resumeWindow = window.open(resumeURL, '_blank')
     if (resumeWindow) {
       resumeWindow.focus()
@@ -254,12 +254,12 @@ const App = () => {
         >
           <div>
             <button onClick={openResume}>Open in New Tab</button>
-            <a href='/Natasha_Resume.pdf' download>
+            <a href={`${process.env.PUBLIC_URL}/Natasha_Resume.pdf`} download>
               <button>Download</button>
             </a>
           </div>
           <iframe
-            src='/Natasha_Resume.pdf' // Replace with the actual path to your resume PDF
+            src={`${process.env.PUBLIC_URL}/Natasha_Resume.pdf`} // Replace with the actual path to your resume PDF
             width='100%'
             height='100%'
             title='resume'
@@ -366,7 +366,7 @@ const App = () => {
           closeModal={() => closeWindow('image')}
         >
           <img
-            src='/images/cat.jpg'
+            src={`${process.env.PUBLIC_URL}/images/cat.jpg`}
             alt='Image'
             style={{
               maxWidth: '100%',
@@ -387,7 +387,7 @@ const App = () => {
           closeModal={() => closeWindow('biographyImage')}
         >
           <img
-            src='/images/me_sitting_sbux.png'
+            src={`${process.env.PUBLIC_URL}/images/me_sitting_sbux.png`}
             alt='Image'
             style={{
               maxWidth: '100%',
@@ -411,7 +411,7 @@ const App = () => {
           closeModal={() => closeWindow('MeTash')}
         >
           <img
-            src='/images/DesktopMedia/Me_Tash.png'
+            src={`${process.env.PUBLIC_URL}/images/DesktopMedia/Me_Tash.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -435,7 +435,7 @@ const App = () => {
           closeModal={() => closeWindow('Tired')}
         >
           <img
-            src='/images/DesktopMedia/tired.jpg'
+            src={`${process.env.PUBLIC_URL}/images/DesktopMedia/tired.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -459,7 +459,7 @@ const App = () => {
           closeModal={() => closeWindow('DuoCoffee')}
         >
           <img
-            src='/images/DesktopMedia/duo-coffee-made-by-naashka.gif'
+            src={`${process.env.PUBLIC_URL}/images/DesktopMedia/duo-coffee-made-by-naashka.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -483,7 +483,7 @@ const App = () => {
           closeModal={() => closeWindow('CuteCat')}
         >
           <img
-            src='/images/DesktopMedia/cute-cat.gif'
+            src={`${process.env.PUBLIC_URL}/images/DesktopMedia/cute-cat.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -504,7 +504,7 @@ const App = () => {
           closeModal={() => closeWindow('MeowdyPartner')}
         >
           <img
-            src='/images/ArchiveMedia/Meowdy_Partner.jpg'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/Meowdy_Partner.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -528,7 +528,7 @@ const App = () => {
           closeModal={() => closeWindow('SnorlaxEat')}
         >
           <img
-            src='/images/ArchiveMedia/snorlax-eat.gif'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/snorlax-eat.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -549,7 +549,7 @@ const App = () => {
           closeModal={() => closeWindow('DuoXP')}
         >
           <img
-            src='/images/ArchiveMedia/duo-coffee-made-by-naashka.gif'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/duo-coffee-made-by-naashka.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -570,7 +570,7 @@ const App = () => {
           closeModal={() => closeWindow('babyNaashka')}
         >
           <img
-            src='/images/ArchiveMedia/Baby_Naashka.png'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/Baby_Naashka.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -591,7 +591,7 @@ const App = () => {
           closeModal={() => closeWindow('SomethingSuspicious')}
         >
           <img
-            src='/images/ArchiveMedia/ichigo_and_jajjangmyun_1.gif'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/ichigo_and_jajjangmyun_1.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -612,7 +612,7 @@ const App = () => {
           closeModal={() => closeWindow('worldPeace')}
         >
           <img
-            src='/images/ArchiveMedia/world_peace.png'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/world_peace.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -633,7 +633,7 @@ const App = () => {
           closeModal={() => closeWindow('killua')}
         >
           <img
-            src='/images/ArchiveMedia/killua.gif'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/killua.gif`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -732,7 +732,7 @@ const App = () => {
           closeModal={() => closeWindow('Ssense')}
         >
           <img
-            src='/images/PhotosMedia/IMG_4429.jpg'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/IMG_4429.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -753,7 +753,7 @@ const App = () => {
           closeModal={() => closeWindow('ThoseWhoHesitate')}
         >
           <img
-            src='/images/PhotosMedia/ny_street_trip.png'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/ny_street_trip.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -774,7 +774,7 @@ const App = () => {
           closeModal={() => closeWindow('WhatsGoodNyc')}
         >
           <img
-            src='/images/PhotosMedia/naashka_empire_state.png'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/naashka_empire_state.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -795,7 +795,7 @@ const App = () => {
           closeModal={() => closeWindow('StreetsTalking')}
         >
           <img
-            src='/images/PhotosMedia/Ny.png'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/Ny.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -816,7 +816,7 @@ const App = () => {
           closeModal={() => closeWindow('Idek')}
         >
           <img
-            src='/images/PhotosMedia/eHHHHHHhhh.png'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/eHHHHHHhhh.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -837,7 +837,7 @@ const App = () => {
           closeModal={() => closeWindow('HappyGirl')}
         >
           <img
-            src='/images/PhotosMedia/happy_naashkaa.jpg'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/happy_naashkaa.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -858,7 +858,7 @@ const App = () => {
           closeModal={() => closeWindow('SkiTrip')}
         >
           <img
-            src='/images/PhotosMedia/Ski_Trip_Quebec.jpg'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/Ski_Trip_Quebec.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -879,7 +879,7 @@ const App = () => {
           closeModal={() => closeWindow('resumeImage')}
         >
           <img
-            src='/images/ResumeMedia/ResumeImage.png'
+            src={`${process.env.PUBLIC_URL}/images/ResumeMedia/ResumeImage.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -903,7 +903,7 @@ const App = () => {
           closeModal={() => closeWindow('Me_Core1')}
         >
           <img
-            src='/images/ArchiveMedia/carWindow.png'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/carWindow.png`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -927,7 +927,7 @@ const App = () => {
           closeModal={() => closeWindow('Me_Core2')}
         >
           <img
-            src='/images/ArchiveMedia/witch.jpg'
+            src={`${process.env.PUBLIC_URL}/images/ArchiveMedia/witch.jpg`}
             alt=''
             style={{
               maxWidth: '100%',
@@ -948,7 +948,7 @@ const App = () => {
           closeModal={() => closeWindow('TeaTime')}
         >
           <img
-            src='/images/PhotosMedia/Tea_Time.png'
+            src={`${process.env.PUBLIC_URL}/images/PhotosMedia/Tea_Time.png`}
             alt=''
             style={{
               maxWidth: '100%',

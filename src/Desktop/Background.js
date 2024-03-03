@@ -53,7 +53,7 @@ const Background = React.memo(() => (
     <x.div
       width='100%'
       height='100%'
-      backgroundImage='url(/images/background2.gif)'
+      backgroundImage={`url(${process.env.PUBLIC_URL}/images/background2.gif)`}
       backgroundSize='cover'
       content=' '
       minHeight='100%'
