@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/naashka/static/css/main.11b868f2.css",
-    "main.js": "/naashka/static/js/main.2001680a.js",
-    "static/js/787.0c50b5f7.chunk.js": "/naashka/static/js/787.0c50b5f7.chunk.js",
-    "static/media/MS-Sans-Serif.ttf": "/naashka/static/media/MS-Sans-Serif.93905f8d36305f50ab93.ttf",
-    "static/media/MS-Sans-Serif.eot": "/naashka/static/media/MS-Sans-Serif.30dfad5d3b1a7f298823.eot",
-    "static/media/MS-Sans-Serif.woff": "/naashka/static/media/MS-Sans-Serif.82eeac7bf2a95f5c4d29.woff",
-    "static/media/React95Video-Numbers.eot": "/naashka/static/media/React95Video-Numbers.70eb4c838949b5a5d0f5.eot",
-    "static/media/React95Video-Numbers.ttf": "/naashka/static/media/React95Video-Numbers.abf01d42c697853bc208.ttf",
-    "static/media/MS-Sans-Serif.woff2": "/naashka/static/media/MS-Sans-Serif.4fb9ed0f3d81e2fccad0.woff2",
-    "static/media/React95Video-Numbers.woff": "/naashka/static/media/React95Video-Numbers.cc52603db1ac08ac9d3b.woff",
-    "static/media/React95Video-Numbers.woff2": "/naashka/static/media/React95Video-Numbers.1b0c9ed82fb40976ab11.woff2",
-    "index.html": "/naashka/index.html",
-    "static/media/check.svg": "/naashka/static/media/check.cab94f089fae33556518400eea96707f.svg",
-    "static/media/check-disabled.svg": "/naashka/static/media/check-disabled.6c74515b9665a58c67515a6b7d03ecec.svg",
-    "static/media/rightcaret.svg": "/naashka/static/media/rightcaret.4316e9ffed3db2dabed84fe4f8329010.svg",
-    "main.11b868f2.css.map": "/naashka/static/css/main.11b868f2.css.map",
-    "main.2001680a.js.map": "/naashka/static/js/main.2001680a.js.map",
-    "787.0c50b5f7.chunk.js.map": "/naashka/static/js/787.0c50b5f7.chunk.js.map"
+    "main.css": "/static/css/main.11b868f2.css",
+    "main.js": "/static/js/main.fbfb9759.js",
+    "static/js/787.0c50b5f7.chunk.js": "/static/js/787.0c50b5f7.chunk.js",
+    "static/media/MS-Sans-Serif.ttf": "/static/media/MS-Sans-Serif.93905f8d36305f50ab93.ttf",
+    "static/media/MS-Sans-Serif.eot": "/static/media/MS-Sans-Serif.30dfad5d3b1a7f298823.eot",
+    "static/media/MS-Sans-Serif.woff": "/static/media/MS-Sans-Serif.82eeac7bf2a95f5c4d29.woff",
+    "static/media/React95Video-Numbers.eot": "/static/media/React95Video-Numbers.70eb4c838949b5a5d0f5.eot",
+    "static/media/React95Video-Numbers.ttf": "/static/media/React95Video-Numbers.abf01d42c697853bc208.ttf",
+    "static/media/MS-Sans-Serif.woff2": "/static/media/MS-Sans-Serif.4fb9ed0f3d81e2fccad0.woff2",
+    "static/media/React95Video-Numbers.woff": "/static/media/React95Video-Numbers.cc52603db1ac08ac9d3b.woff",
+    "static/media/React95Video-Numbers.woff2": "/static/media/React95Video-Numbers.1b0c9ed82fb40976ab11.woff2",
+    "index.html": "/index.html",
+    "static/media/check.svg": "/static/media/check.cab94f089fae33556518400eea96707f.svg",
+    "static/media/check-disabled.svg": "/static/media/check-disabled.6c74515b9665a58c67515a6b7d03ecec.svg",
+    "static/media/rightcaret.svg": "/static/media/rightcaret.4316e9ffed3db2dabed84fe4f8329010.svg",
+    "main.11b868f2.css.map": "/static/css/main.11b868f2.css.map",
+    "main.fbfb9759.js.map": "/static/js/main.fbfb9759.js.map",
+    "787.0c50b5f7.chunk.js.map": "/static/js/787.0c50b5f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11b868f2.css",
-    "static/js/main.2001680a.js"
+    "static/js/main.fbfb9759.js"
   ]
 }
