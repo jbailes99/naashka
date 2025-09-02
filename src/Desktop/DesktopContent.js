@@ -88,7 +88,7 @@ const CaseStudiesIcon = ({ openWindow }) => {
   return (
     <Icon
       icon={Syncui120}
-      title={<span style={{ color: 'white' }}>Case Studies</span>}
+      title={<span style={{ color: 'white' }}>Case Studies Case Studies</span>}
       onClick={() => openWindow('caseStudies')}
     />
   )
