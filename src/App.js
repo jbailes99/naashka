@@ -28,6 +28,8 @@ import '@react95/icons/icons.css'
 
 import { Icon } from '@app/components'
 import { ImgWindow } from '@app/windows'
+import PaintWindow from './windows/PaintWindow'
+import StickyNote from './windows/StickyNote'
 
 import {
   BiographyIcon,
@@ -42,6 +44,7 @@ import {
   VideosIcon,
   ContactIcon,
   FaxIcon,
+  PaintIcon,
   Desktop,
   Grid,
 } from './Desktop/DesktopContent'
@@ -124,6 +127,8 @@ const App = () => {
     MeTash: true,
   })
 
+  const [stickyNotes, setStickyNotes] = useState([])
+
   const [windowPosition, setWindowPosition] = useState(calculateCenterPosition) // Initialize with default values
 
   useEffect(() => {
@@ -175,6 +180,24 @@ const App = () => {
   const handleClickLink = url => {
     window.open(url, '_blank')
   }
+
+  const saveAsSticky = (imageData, title) => {
+    const newSticky = {
+      id: Date.now(),
+      imageData,
+      title,
+      isOpen: true,
+    }
+    setStickyNotes(prev => [...prev, newSticky])
+  }
+
+  const deleteSticky = id => {
+    setStickyNotes(prev => prev.filter(sticky => sticky.id !== id))
+  }
+
+  const closeSticky = id => {
+    setStickyNotes(prev => prev.map(sticky => (sticky.id === id ? { ...sticky, isOpen: false } : sticky)))
+  }
   return (
     <ThemeProvider theme='eggplant'>
       <GlobalStyle />
@@ -202,6 +225,7 @@ const App = () => {
             <VideosIcon openWindow={openWindow} />
             <ContactIcon openWindow={openWindow} />
             <FaxIcon openWindow={openWindow} />
+            <PaintIcon openWindow={openWindow} />
           </Desktop>
         </DesktopContainer>
 
@@ -1634,6 +1658,22 @@ const App = () => {
           </div>
         </Modal>
       )}
+      {/* Paint Window */}
+      <PaintWindow
+        isOpen={openWindows.paint || false}
+        onClose={() => closeWindow('paint')}
+        onSaveAsSticky={saveAsSticky}
+      />
+      {/* Sticky Notes */}
+      {stickyNotes.map(sticky => (
+        <StickyNote
+          key={sticky.id}
+          isOpen={sticky.isOpen}
+          onClose={() => deleteSticky(sticky.id)}
+          imageData={sticky.imageData}
+          title={sticky.title}
+        />
+      ))}
     </ThemeProvider>
   )
 }

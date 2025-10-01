@@ -13,6 +13,7 @@ import {
   Explorer100,
   Syncui120,
   Phone,
+  Brush,
 } from '@react95/icons'
 import styled from '@xstyled/styled-components'
 
@@ -162,6 +163,10 @@ const FaxIcon = ({ openWindow }) => {
   )
 }
 
+const PaintIcon = ({ openWindow }) => {
+  return <Icon icon={Brush} title={<span style={{ color: 'white' }}>Paint</span>} onClick={() => openWindow('paint')} />
+}
+
 // Non-Desktop Icons
 
 export {
@@ -177,6 +182,7 @@ export {
   VideosIcon,
   ContactIcon,
   FaxIcon,
+  PaintIcon,
   Desktop,
   Grid,
 }
